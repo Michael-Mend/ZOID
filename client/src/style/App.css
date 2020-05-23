@@ -1,3 +1,11 @@
+h1 {
+    margin-left: 10%;
+    color: rgb(116, 116, 116);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
 .nav {
     height: 100%;
     width: 20%;
@@ -5,14 +13,22 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(221, 213, 213);
+    background-color: rgb(206, 201, 201);
     overflow-x: hidden;
     padding-top: 20px;
     border-right: solid;
-    border-color: rgb(117, 116, 116);
+    border-color: rgb(116, 116, 116);
     border-width: 2px;
+    border-bottom: solid;
+    border-width: 1px;
 }
-h2 {
-    margin-left: 10%;
-    /* color: black; */
+
+.searchBar {
+    width: 60%;
+    margin-left: 30%;
+    margin-top: 1%;
+}
+
+::placeholder {
+    color: rgb(151, 147, 147);
 }
