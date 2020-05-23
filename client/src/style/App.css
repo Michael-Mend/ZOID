@@ -1,0 +1,18 @@
+.nav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(221, 213, 213);
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-right: solid;
+    border-color: rgb(117, 116, 116);
+    border-width: 2px;
+}
+h2 {
+    margin-left: 10%;
+    /* color: black; */
+}
