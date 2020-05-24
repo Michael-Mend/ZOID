@@ -3,12 +3,12 @@ import '../style/App.css'
 
 function SearchBar() {
     return (
-        <div className="row">
-            <div className="searchBar"> 
-                <input type="text" placeholder="search">
-                </input>
+        <div className="container   ">
+            <div className="row">
+                    <input type="text" placeholder="search" className="search"></input>
             </div>
         </div>
+        
     )
 };
  export default SearchBar;
