@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: rgb(220, 220, 220);
+}
+
+
+/* HEADER */
+
+h1 {
+  margin-left: 10%;
+  color: rgb(116, 116, 116);
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 60px;
+}
+.head {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(200, 200, 200);
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-right: solid;
+  border-color: rgb(116, 116, 116);
+  border-width: 1px;
+}
+
+/* SEARCHBAR */
+
+.container {
+  background-color: rgb(210, 210, 210);
+}
+.search {
+  border: none;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(116, 116, 116);
+  background-color: transparent;
+  width: 555px;
+  margin-left: 23%;
+  line-height: 35px;
+  font-size: 20px;
+  margin-top: 1%;
+  color: rgb(116, 116, 116);
+}
+.search:focus {
+  outline: none;
+}
+::placeholder {
+  color: rgb(155, 155, 155);
+}
+
+/* TAB */
+
+.tabs {
+  margin-left: 23%;
+  display: flex;
+  font-size: 20px;
+  font-family: 'Roboto';
+}
+.tab0 {
+  width: 20%;
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: rgb(116, 116, 116);
+  text-align: center;
+  color: rgb(106, 106, 106);
+}
+.tab1 {
+  margin-left: 5%;
+  width: 20%;
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: rgb(116, 116, 116);
+  text-align: center;
+}
+
+/* CARD */

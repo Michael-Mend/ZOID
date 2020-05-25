@@ -1,11 +1,11 @@
 import React from "react";
-import '../style/App.css'
+import '../App.css'
 
-function Nav() {
+function Header() {
     return (
-        <nav className="nav">
+        <nav className="head">
             <h1>Work in Progress</h1>
         </nav>
     )
 };
- export default Nav;
+ export default Header;
