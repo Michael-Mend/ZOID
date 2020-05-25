@@ -45,7 +45,7 @@ h1 {
   line-height: 35px;
   font-size: 20px;
   margin-top: 1%;
-  color: rgb(116, 116, 116);
+  color: rgb(106, 106, 106);
 }
 .search:focus {
   outline: none;
@@ -56,27 +56,63 @@ h1 {
 
 /* TAB */
 
+.link {
+  text-decoration: none;
+  color: rgb(106, 106, 106);
+}
 .tabs {
   margin-left: 23%;
   display: flex;
-  font-size: 20px;
+  font-size: 25px;
   font-family: 'Roboto';
 }
 .tab0 {
   width: 20%;
-  border-bottom: solid;
-  border-width: 2px;
-  border-color: rgb(116, 116, 116);
   text-align: center;
   color: rgb(106, 106, 106);
 }
 .tab1 {
   margin-left: 5%;
   width: 20%;
-  border-bottom: solid;
-  border-width: 2px;
-  border-color: rgb(116, 116, 116);
   text-align: center;
+  color: rgb(106, 106, 106);
+}
+.link:hover {
+  border-bottom: solid;
+  border-color: rgb(155, 155, 155);
+  border-width: 3px;
 }
 
 /* CARD */
+
+.card {
+  background-color: rgb(155, 155, 155);
+  margin-left: 21%;
+  display: flex;
+  margin-bottom: 20px;
+}
+.thumb {
+  height: 100px;
+  width: 100px;
+  display: flex;
+}
+.title {
+  margin-left: 10%;
+  margin-top:8px;
+  color: rgb(220, 220, 220);
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: 100;
+}
+.postLink {
+  margin-left: 11%;
+  margin-right:20%;
+  color: rgb(200, 200, 200);
+  text-decoration: none;
+}
+.postLinks {
+  margin-top: -8px;
+}
+.postLink:hover {
+  text-decoration: underline;
+}
