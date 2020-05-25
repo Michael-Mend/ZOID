@@ -31,8 +31,14 @@ h1 {
 
 /* SEARCHBAR */
 
-.container {
-  background-color: rgb(210, 210, 210);
+.new {
+  height: 40px;
+  margin-top: 30px;
+  position: fixed;
+  right: 50px; 
+}
+.new:hover {
+  height: 42px;
 }
 .search {
   border: none;
@@ -46,6 +52,9 @@ h1 {
   font-size: 20px;
   margin-top: 1%;
   color: rgb(106, 106, 106);
+}
+.searchbar {
+  display: flex;
 }
 .search:focus {
   outline: none;
@@ -61,7 +70,7 @@ h1 {
   color: rgb(106, 106, 106);
 }
 .tabs {
-  margin-left: 23%;
+  margin-left: 20%;
   display: flex;
   font-size: 25px;
   font-family: 'Roboto';
@@ -107,7 +116,7 @@ h1 {
 .postLink {
   margin-left: 11%;
   margin-right:20%;
-  color: rgb(200, 200, 200);
+  color: rgb(220, 220, 220);
   text-decoration: none;
 }
 .postLinks {
