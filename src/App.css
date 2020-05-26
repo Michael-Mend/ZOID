@@ -124,11 +124,15 @@ h1 {
   margin-left: 21%;
   display: flex;
   margin-bottom: 20px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .thumb {
   height: 100px;
   width: 100px;
   display: flex;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .title {
   margin-left: 10%;
@@ -158,45 +162,83 @@ h1 {
 .postLink:hover {
   text-decoration: underline;
 }
+.postLink0:hover {
+  text-decoration: underline;
+}
 
 /* NEW POST */
 
-h2 {
-  font-weight: 400;
-  font-size: 40px;
-}
-h5 {
-  font-weight: 200;
-  font-size: 20px;
-}
 .newPost {
-  margin-top: 2%;
+  color: rgb(220, 220, 220);
+  width: 78%;
+  height: 650px;
   margin-left: 22%;
   background-color: rgb(155, 155, 155);
-  color: rgb(220, 220, 220);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.newPost div button {
+  background-color: transparent;
+  border: none;
+}
+.newPost div button img {
+  height: 50px;
+}
+.newPost div button img:hover {
+  height: 52px;
+}
+.newPost div h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.newPost div div {
+  display: flex;
+}
+.newPost div input {
   font-family: 'Roboto';
-}
-.titleInput {
-  border: none;
-  border-bottom: solid;
-  border-width: 1px;
-  border-color: rgb(116, 116, 116);
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
   background-color: rgb(200, 200, 200);
-  border-radius: 3px;
-  margin-left: 2%;
-  width: 555px; 
+  width: 98%;
+  line-height: 20px;
   font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-color: rgb(116, 116, 116);
+}
+.newPost div textarea {
+  font-family: 'Roboto';
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
+  background-color: rgb(200, 200, 200);
+  width: 98%;
+  line-height: 20px;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-width: 2px;
+  height: 220px;
+  border-color: rgb(116, 116, 116);
+  resize: none;
+}
+.newPost div {
+  margin-left: 3%;
+  padding-top: 1%;
+}
+.newPost div div a {
+  position: absolute;
+  right: 200px;
+  font-family: 'Roboto';
+  background-color: rgb(200, 200, 200);
+  padding: 30px;
+  font-size: 20px;
+  top: 645px;
+  border-radius: 10px;
+  text-decoration: none;
+  border-bottom: solid;
+  border-right: solid;
   color: rgb(106, 106, 106);
 }
-.descInput {
-  border: none;
-  border-bottom: solid;
-  border-width: 1px;
-  border-color: rgb(116, 116, 116);
-  background-color: rgb(200, 200, 200);
-  border-radius: 3px;
-  margin-left: 2%;
-  width: 555px; 
-  font-size: 20px;
-  color: rgb(106, 106, 106);
+.newPost div div a:hover {
+  padding: 31px;
 }

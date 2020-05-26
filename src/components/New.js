@@ -1,14 +1,32 @@
 import React from "react";
+import Plus from "../images/new.png";
+import Nav from "./Nav";
+import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 function New() {
     return(
-        <div className="newPost">
-            <h2>New Post</h2>
-            <h5>Title</h5>
-            <input className="titleInput" type="text"></input>
-            <h5>Description</h5>
-            <textarea className="descInput"></textarea>
+        <div>
+            <SearchBar />
+            <Nav />
+            <div className="newPost">
+                <div>
+                    <h2 className="titleLabel">Post Title</h2>
+                    <input type='text'></input>
+                    <h2 className="descLabel">Post Description</h2>
+                    <textarea></textarea>
+                    <div>
+                        <button><img className="newImg" src={Plus}/></button>
+                        <h2 className="imgLabel">Add Images</h2>
+                    </div>
+                    <div>
+                        <button><img className="newFile" src={Plus}/></button>
+                        <h2 className="fileLabel">Add File</h2>
+                        <Link to='/'>Submit</Link>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

@@ -7,7 +7,7 @@ function Header() {
     return (
         <nav className="head">
             <div className="headTitle">
-                <img className="logo" src={Logo}/>
+                <Link to="/"><img className="logo" src={Logo}/></Link>
             </div>
             <div className="logSign">
                 <Link className="signup" to="/signup">signup</Link>
