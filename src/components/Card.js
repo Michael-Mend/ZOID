@@ -13,7 +13,10 @@ function Card() {
                     <Link className='postLink' >comment</Link>
                     <Link className='postLink' >download</Link>
                     <Link className='postLink' >follow</Link>
+                    <Link className='postLink' >share</Link>
                     <Link className='postLink' >save</Link>
+                    <Link className='postLink0' >report</Link>
+
                 </div>
             </div>
         </div>

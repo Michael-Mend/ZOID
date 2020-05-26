@@ -9,10 +9,9 @@ body {
 /* HEADER */
 
 h1 {
-  margin-left: 10%;
   color: rgb(116, 116, 116);
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 60px;
+  font-size: 80px;
 }
 .head {
   height: 100%;
@@ -27,6 +26,32 @@ h1 {
   border-right: solid;
   border-color: rgb(116, 116, 116);
   border-width: 1px;
+}
+.headTitle {
+  text-align: center;
+}
+.logo{
+  height: 90px;
+  margin-top: 5%;
+}
+.logSign {
+  text-align: center;
+  margin-top: 10px;
+}
+.signup {
+  color: rgb(116, 116, 116);
+  text-decoration: none;
+  margin-right: 2%;
+}
+.login {
+  color: rgb(116, 116, 116);
+  text-decoration: none;
+}
+.signup:hover {
+  text-decoration: underline;
+}
+.login:hover {
+  text-decoration: underline;
 }
 
 /* SEARCHBAR */
@@ -114,8 +139,16 @@ h1 {
   font-weight: 100;
 }
 .postLink {
-  margin-left: 11%;
-  margin-right:20%;
+  padding-left: 11%;
+  padding-right:10%;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+  border-right: solid;
+  border-width: 1px;
+}
+.postLink0 {
+  padding-left: 11%;
+  padding-right:10%;
   color: rgb(220, 220, 220);
   text-decoration: none;
 }
@@ -124,4 +157,46 @@ h1 {
 }
 .postLink:hover {
   text-decoration: underline;
+}
+
+/* NEW POST */
+
+h2 {
+  font-weight: 400;
+  font-size: 40px;
+}
+h5 {
+  font-weight: 200;
+  font-size: 20px;
+}
+.newPost {
+  margin-top: 2%;
+  margin-left: 22%;
+  background-color: rgb(155, 155, 155);
+  color: rgb(220, 220, 220);
+  font-family: 'Roboto';
+}
+.titleInput {
+  border: none;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(116, 116, 116);
+  background-color: rgb(200, 200, 200);
+  border-radius: 3px;
+  margin-left: 2%;
+  width: 555px; 
+  font-size: 20px;
+  color: rgb(106, 106, 106);
+}
+.descInput {
+  border: none;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(116, 116, 116);
+  background-color: rgb(200, 200, 200);
+  border-radius: 3px;
+  margin-left: 2%;
+  width: 555px; 
+  font-size: 20px;
+  color: rgb(106, 106, 106);
 }

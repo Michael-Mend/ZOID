@@ -1,14 +1,17 @@
 import React from "react";
 import '../App.css'
 import { Link } from "react-router-dom";
+import Logo from "../images/logo.png"
 
 function Header() {
     return (
         <nav className="head">
-            <h1>Work in Progress</h1>
-            <div>
-                <Link to="/signup"></Link>
-                <Link to="/login"></Link>
+            <div className="headTitle">
+                <img className="logo" src={Logo}/>
+            </div>
+            <div className="logSign">
+                <Link className="signup" to="/signup">signup</Link>
+                <Link className="login" to="/login">login</Link>
             </div>
         </nav>
     )
