@@ -171,7 +171,7 @@ h1 {
 .newPost {
   color: rgb(220, 220, 220);
   width: 78%;
-  height: 650px;
+  height: 655px;
   margin-left: 22%;
   background-color: rgb(155, 155, 155);
   border-top-left-radius: 10px;
@@ -201,6 +201,7 @@ h1 {
   background-color: rgb(200, 200, 200);
   width: 98%;
   line-height: 20px;
+  height: 35px;
   font-size: 20px;
   border-top: none;
   border-left: none;
@@ -221,6 +222,9 @@ h1 {
   border-color: rgb(116, 116, 116);
   resize: none;
 }
+.newPost div *:focus {
+  outline: none;
+}
 .newPost div {
   margin-left: 3%;
   padding-top: 1%;
@@ -232,7 +236,7 @@ h1 {
   background-color: rgb(200, 200, 200);
   padding: 30px;
   font-size: 20px;
-  top: 645px;
+  top: 655px;
   border-radius: 10px;
   text-decoration: none;
   border-bottom: solid;
@@ -241,4 +245,58 @@ h1 {
 }
 .newPost div div a:hover {
   padding: 31px;
+}
+
+/* SIGNUP LOGIN */
+
+.signUpForm {
+  background-color: rgb(155, 155, 155);
+  margin-left: 22%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-bottom: 50px;
+}
+.signUpForm * {
+  margin-left: 3%;
+}
+.usernameLabel {
+  padding-top: 40px;
+}
+.passwordInput {
+  margin-bottom: 20px;
+}
+.signUpForm a {
+  margin-top: 20px;
+  display: block;
+  font-family: 'Roboto';
+  background-color: rgb(200, 200, 200);
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  border-bottom: solid;
+  border-right: solid;
+  color: rgb(106, 106, 106);
+  width: 100px;
+  text-align: center;
+}
+.signUpForm p {
+  font-family: 'Roboto';
+  color: rgb(220, 220, 220);
+  font-size: 20px;
+}
+.signUpForm input {
+  font-family: 'Roboto';
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
+  background-color: rgb(200, 200, 200);
+  width: 40%;
+  line-height: 20px;
+  height: 35px;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-color: rgb(116, 116, 116);
+}
+.signUpForm input:focus {
+  outline: none;
 }
