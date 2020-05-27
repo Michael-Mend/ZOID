@@ -1,0 +1,302 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: rgb(220, 220, 220);
+}
+
+
+/* HEADER */
+
+h1 {
+  color: rgb(116, 116, 116);
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 80px;
+}
+.head {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(200, 200, 200);
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-right: solid;
+  border-color: rgb(116, 116, 116);
+  border-width: 1px;
+}
+.headTitle {
+  text-align: center;
+}
+.logo{
+  height: 90px;
+  margin-top: 5%;
+}
+.logSign {
+  text-align: center;
+  margin-top: 10px;
+}
+.signup {
+  color: rgb(116, 116, 116);
+  text-decoration: none;
+  margin-right: 2%;
+}
+.login {
+  color: rgb(116, 116, 116);
+  text-decoration: none;
+}
+.signup:hover {
+  text-decoration: underline;
+}
+.login:hover {
+  text-decoration: underline;
+}
+
+/* SEARCHBAR */
+
+.new {
+  height: 40px;
+  margin-top: 30px;
+  position: fixed;
+  right: 50px; 
+}
+.new:hover {
+  height: 42px;
+}
+.search {
+  border: none;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(116, 116, 116);
+  background-color: transparent;
+  width: 555px;
+  margin-left: 23%;
+  line-height: 35px;
+  font-size: 20px;
+  margin-top: 1%;
+  color: rgb(106, 106, 106);
+}
+.searchbar {
+  display: flex;
+}
+.search:focus {
+  outline: none;
+}
+::placeholder {
+  color: rgb(155, 155, 155);
+}
+
+/* TAB */
+
+.link {
+  text-decoration: none;
+  color: rgb(106, 106, 106);
+}
+.tabs {
+  margin-left: 20%;
+  display: flex;
+  font-size: 25px;
+  font-family: 'Roboto';
+}
+.tab0 {
+  width: 20%;
+  text-align: center;
+  color: rgb(106, 106, 106);
+}
+.tab1 {
+  margin-left: 5%;
+  width: 20%;
+  text-align: center;
+  color: rgb(106, 106, 106);
+}
+.link:hover {
+  border-bottom: solid;
+  border-color: rgb(155, 155, 155);
+  border-width: 3px;
+}
+
+/* CARD */
+
+.card {
+  background-color: rgb(155, 155, 155);
+  margin-left: 21%;
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.thumb {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.title {
+  margin-left: 10%;
+  margin-top:8px;
+  color: rgb(220, 220, 220);
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: 100;
+}
+.postLink {
+  padding-left: 11%;
+  padding-right:10%;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+  border-right: solid;
+  border-width: 1px;
+}
+.postLink0 {
+  padding-left: 11%;
+  padding-right:10%;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+}
+.postLinks {
+  margin-top: -8px;
+}
+.postLink:hover {
+  text-decoration: underline;
+}
+.postLink0:hover {
+  text-decoration: underline;
+}
+
+/* NEW POST */
+
+.newPost {
+  color: rgb(220, 220, 220);
+  width: 78%;
+  height: 655px;
+  margin-left: 22%;
+  background-color: rgb(155, 155, 155);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.newPost div button {
+  background-color: transparent;
+  border: none;
+}
+.newPost div button img {
+  height: 50px;
+}
+.newPost div button img:hover {
+  height: 52px;
+}
+.newPost div h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.newPost div div {
+  display: flex;
+}
+.newPost div input {
+  font-family: 'Roboto';
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
+  background-color: rgb(200, 200, 200);
+  width: 98%;
+  line-height: 20px;
+  height: 35px;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-color: rgb(116, 116, 116);
+}
+.newPost div textarea {
+  font-family: 'Roboto';
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
+  background-color: rgb(200, 200, 200);
+  width: 98%;
+  line-height: 20px;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-width: 2px;
+  height: 220px;
+  border-color: rgb(116, 116, 116);
+  resize: none;
+}
+.newPost div *:focus {
+  outline: none;
+}
+.newPost div {
+  margin-left: 3%;
+  padding-top: 1%;
+}
+.newPost div div a {
+  position: absolute;
+  right: 200px;
+  font-family: 'Roboto';
+  background-color: rgb(200, 200, 200);
+  padding: 30px;
+  font-size: 20px;
+  top: 655px;
+  border-radius: 10px;
+  text-decoration: none;
+  border-bottom: solid;
+  border-right: solid;
+  color: rgb(106, 106, 106);
+}
+.newPost div div a:hover {
+  padding: 31px;
+}
+
+/* SIGNUP LOGIN */
+
+.signUpForm {
+  background-color: rgb(155, 155, 155);
+  margin-left: 22%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-bottom: 50px;
+}
+.signUpForm * {
+  margin-left: 3%;
+}
+.usernameLabel {
+  padding-top: 40px;
+}
+.passwordInput {
+  margin-bottom: 20px;
+}
+.signUpForm a {
+  margin-top: 20px;
+  display: block;
+  font-family: 'Roboto';
+  background-color: rgb(200, 200, 200);
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  border-bottom: solid;
+  border-right: solid;
+  color: rgb(106, 106, 106);
+  width: 100px;
+  text-align: center;
+}
+.signUpForm p {
+  font-family: 'Roboto';
+  color: rgb(220, 220, 220);
+  font-size: 20px;
+}
+.signUpForm input {
+  font-family: 'Roboto';
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
+  background-color: rgb(200, 200, 200);
+  width: 40%;
+  line-height: 20px;
+  height: 35px;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-color: rgb(116, 116, 116);
+}
+.signUpForm input:focus {
+  outline: none;
+}
