@@ -26,6 +26,7 @@ h1 {
   border-right: solid;
   border-color: rgb(116, 116, 116);
   border-width: 1px;
+  text-align: center;
 }
 .headTitle {
   text-align: center;
@@ -51,6 +52,18 @@ h1 {
   text-decoration: underline;
 }
 .login:hover {
+  text-decoration: underline;
+}
+.signout {
+  color: rgb(116, 116, 116);
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+}
+.signout:focus {
+  outline: none ;
+}
+.signout:hover {
   text-decoration: underline;
 }
 
@@ -265,7 +278,7 @@ h1 {
 .passwordInput {
   margin-bottom: 20px;
 }
-.signUpForm a {
+.signUpForm button {
   margin-top: 20px;
   display: block;
   font-family: 'Roboto';

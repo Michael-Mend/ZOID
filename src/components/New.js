@@ -17,11 +17,11 @@ function New() {
                     <h2 className="descLabel">Post Description</h2>
                     <textarea></textarea>
                     <div>
-                        <button><img className="newImg" src={Plus}/></button>
+                        <button><img className="newImg" src={Plus} alt=''/></button>
                         <h2 className="imgLabel">Add Images</h2>
                     </div>
                     <div>
-                        <button><img className="newFile" src={Plus}/></button>
+                        <button><img className="newFile" src={Plus} alt=''/></button>
                         <h2 className="fileLabel">Add File</h2>
                         <Link to='/'>Submit</Link>
                     </div>

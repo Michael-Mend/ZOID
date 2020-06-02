@@ -1,23 +1,48 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import Nav from "./Nav";
 import SearchBar from "./SearchBar";
-import { Link } from "react-router-dom";
 import "../App.css";
+import { withRouter, Redirect } from 'react-router';
+import app from '../base.js';
+import { AuthContext } from '../Auth.js';
 
-function Login() {
+
+const Login = ({ history }) => {
+    const handleLogin = useCallback(
+        async event => {
+            event.preventDefault();
+            const { email,password } = event.target.elements;
+            try {
+                await app
+                    .auth()
+                    .signInWithEmailAndPassword(email.value, password.value);
+                history.push('/');
+            } catch (error) {
+                alert(error);
+            }
+        },
+        [history]
+    );
+
+    const { currentUser } = useContext(AuthContext);
+
+    if (currentUser) {
+        return <Redirect to='/' />;
+    }
+
     return (
         <div>
             <SearchBar />
             <Nav />
-            <div className="signUpForm">
+            <form onSubmit={handleLogin} className="signUpForm">
                 <p className="usernameLabel">username</p>
-                <input type="text"></input>
+                <input name='email' id='username' type="email"></input>
                 <p>password</p>
-                <input className="passwordInput" type="text"></input>
-                <Link to='/'>sign up</Link>
-            </div>
+                <input name='password' id='password' className="passwordInput" type="password"></input>
+                <button type='submit' id='login'>login</button>
+            </form>
         </div>
     )
 }
 
-export default Login;
+export default withRouter(Login);
