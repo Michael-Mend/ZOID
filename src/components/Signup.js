@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Nav from "./Nav";
 import SearchBar from "./SearchBar";
-import { Link } from "react-router-dom";
+import app from '../base';
 import "../App.css";
+import { withRouter } from 'react-router';
 
-function Signup() {
+const Signup = ({ history }) => {
+    const handleSignUp = useCallback(async event => {
+        event.preventDefault();
+        const {email, password} = event.target.elements;
+        try {
+            await app
+                .auth()
+                .createUserWithEmailAndPassword(email.value, password.value);
+            history.push('/');
+        } catch (error) {
+            alert(error)
+        }
+    }, [history]);
+
     return (
         <div>
             <SearchBar />
             <Nav />
-            <div className="signUpForm">
+            <form onSubmit={handleSignUp} className="signUpForm">
                 <p className="usernameLabel">username</p>
-                <input type="text"></input>
+                <input id='username' type='text'></input>
                 <p>email</p>
-                <input type="text"></input>
+                <input name='email' id='email' type="email"></input>
                 <p>password</p>
-                <input className="passwordInput" type="text"></input>
-                <Link to='/'>sign up</Link>
-            </div>
+                <input name='password' id='password' type="password"></input>
+                <p>repeat password</p>
+                <input className="passwordInput" type="password"></input>
+                <button type='submit' id='signup'>sign up</button>
+            </form>
         </div>
     )
 }
 
-export default Signup;
+export default withRouter(Signup);
