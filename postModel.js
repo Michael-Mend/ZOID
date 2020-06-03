@@ -6,10 +6,21 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
+
     description: {
         type: String,
         required: true
-    }
+    },
+
+    image_link: {
+        type: String,
+    },
+
+    file_link: {
+        type: String,
+    },
+
+    comments: Array
 });
 
 const Post = mongoose.model('Post', PostSchema)
