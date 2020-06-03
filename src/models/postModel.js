@@ -20,6 +20,10 @@ const PostSchema = new Schema({
         type: String,
     },
 
+    likes: {
+        type: Number,
+    },
+
     comments: Array
 });
 
