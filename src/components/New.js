@@ -5,13 +5,18 @@ import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 import "../App.css";
 
-function New() {
+const New = () => {
+    
+    function newPost() {
+        
+    }
+
     return(
         <div>
             <SearchBar />
             <Nav />
             <div className="newPost">
-                <div>
+                <form onSubmit={newPost}>
                     <h2 className="titleLabel">Post Title</h2>
                     <input type='text'></input>
                     <h2 className="descLabel">Post Description</h2>
@@ -23,9 +28,9 @@ function New() {
                     <div>
                         <button><img className="newFile" src={Plus} alt=''/></button>
                         <h2 className="fileLabel">Add File</h2>
-                        <Link to='/'>Submit</Link>
+                        <button id='submitNew' type='submit'>Submit</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )
