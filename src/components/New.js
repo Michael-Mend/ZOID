@@ -3,9 +3,12 @@ import Nav from "./Nav";
 import SearchBar from "./SearchBar";
 import "../App.css";
 import axios from 'axios';
+import firebase from 'firebase';
 
 class New extends Component {
     constructor(props) {
+        const user = firebase.auth().currentUser;
+
         super(props) 
 
         this.state = {
@@ -13,7 +16,7 @@ class New extends Component {
             description: '',
             image_link: '',
             file_link: '',
-            username: ''
+            username: user.displayName
         }
     }
 

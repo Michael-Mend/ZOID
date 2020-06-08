@@ -178,6 +178,15 @@ h1 {
 .postLink0:hover {
   text-decoration: underline;
 }
+.titleDiv {
+  display: flex;
+}
+.titleDiv h4 {
+  font-weight: 100;
+  color: rgb(220, 220, 220);
+  font-family: 'Roboto';
+  margin-left: 20px;
+}
 
 /* NEW POST */
 
@@ -209,6 +218,9 @@ h1 {
 }
 .newPost form button:focus {
   outline: none;
+}
+.newPost form button:hover {
+  width: 101px;
 }
 .newPost form input {
   font-family: 'Roboto';
@@ -244,6 +256,9 @@ h1 {
   padding-top: 3%;
   margin-left: 5%;
   font-weight: 100;
+}
+.newPost *:focus {
+  outline: none;
 }
 
 /* SIGNUP LOGIN */

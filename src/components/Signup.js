@@ -8,11 +8,16 @@ import { withRouter } from 'react-router';
 const Signup = ({ history }) => {
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
-        const {email, password} = event.target.elements;
+        const {email, password, displayName} = event.target.elements;
         try {
             await app
                 .auth()
-                .createUserWithEmailAndPassword(email.value, password.value);
+                .createUserWithEmailAndPassword(email.value, password.value)
+                .then( res => {
+                    return res.user.updateProfile({
+                        displayName: displayName.value
+                    })
+                });
             history.push('/');
         } catch (error) {
             alert(error)
@@ -25,7 +30,7 @@ const Signup = ({ history }) => {
             <Nav />
             <form onSubmit={handleSignUp} className="signUpForm">
                 <p className="usernameLabel">username</p>
-                <input id='username' type='text'></input>
+                <input name='displayName' id='username' type='text'></input>
                 <p>email</p>
                 <input name='email' id='email' type="email"></input>
                 <p>password</p>
