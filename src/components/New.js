@@ -1,39 +1,68 @@
-import React from "react";
-import Plus from "../images/new.png";
+import React, { Component } from "react";
 import Nav from "./Nav";
 import SearchBar from "./SearchBar";
-import { Link } from "react-router-dom";
 import "../App.css";
+import axios from 'axios';
 
-const New = () => {
-    
-    function newPost() {
-        
+class New extends Component {
+    constructor(props) {
+        super(props) 
+
+        this.state = {
+            title: '',
+            description: ''
+        }
     }
 
-    return(
-        <div>
-            <SearchBar />
-            <Nav />
-            <div className="newPost">
-                <form onSubmit={newPost}>
-                    <h2 className="titleLabel">Post Title</h2>
-                    <input type='text'></input>
-                    <h2 className="descLabel">Post Description</h2>
-                    <textarea></textarea>
-                    <div>
-                        <button><img className="newImg" src={Plus} alt=''/></button>
-                        <h2 className="imgLabel">Add Images</h2>
-                    </div>
-                    <div>
-                        <button><img className="newFile" src={Plus} alt=''/></button>
-                        <h2 className="fileLabel">Add File</h2>
-                        <button id='submitNew' type='submit'>Submit</button>
-                    </div>
-                </form>
+    changeHandler = e => {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    submitHandler = e => {
+        e.preventDefault()
+        console.log(this.state)
+        axios.post('/newpost', this.state)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        }) 
+    }
+
+    render() {
+        const { title, description } = this.state
+        return(
+            <div>
+                <SearchBar />
+                <Nav />
+                <div className="newPost">
+                    <form onSubmit={this.submitHandler}>
+                        <div>
+                            <input 
+                                type="text" 
+                                name="title" 
+                                value={title}
+                                onChange={this.changeHandler}
+                            />
+                        </div>
+                        <div>
+                            <input 
+                            type="text" 
+                            name="description" 
+                            value={description}
+                            onChange={this.changeHandler}
+                            />
+                        </div>
+                        <div>
+                            <input type="text" name=""/>
+                        </div>
+                        <button type="submit">submit</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default New;
+export default New
