@@ -21,7 +21,7 @@ class New extends Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        axios.post('/newpost', this.state)
+        axios.post('http://localhost:5000/newpost', this.state)
         .then(res => {
             console.log(res)
         })
