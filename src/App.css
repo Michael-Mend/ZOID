@@ -184,11 +184,66 @@ h1 {
 .newPost {
   color: rgb(220, 220, 220);
   width: 78%;
-  height: 655px;
   margin-left: 22%;
   background-color: rgb(155, 155, 155);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  padding-bottom: 3%;
+}
+.newPost form {
+  margin-left: 5%;
+}
+.newPost form button {
+  border: none;
+  font-family: 'Roboto';
+  background-color: rgb(200, 200, 200);
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  border-bottom: solid;
+  border-right: solid;
+  color: rgb(106, 106, 106);
+  width: 100px;
+  text-align: center;
+  border-width: 2px;
+}
+.newPost form button:focus {
+  outline: none;
+}
+.newPost form input {
+  font-family: 'Roboto';
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
+  background-color: rgb(200, 200, 200);
+  width: 40%;
+  line-height: 20px;
+  height: 35px;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-color: rgb(116, 116, 116);
+}
+.newPost form textarea {
+  font-family: 'Roboto';
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
+  background-color: rgb(200, 200, 200);
+  line-height: 20px;
+  height: 250px;
+  width: 85%;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-color: rgb(116, 116, 116);
+}
+.newPost form div {
+  margin-bottom: 10px;
+}
+.newPost h3 {
+  font-size: 30px;
+  padding-top: 3%;
+  margin-left: 5%;
+  font-weight: 100;
 }
 
 /* SIGNUP LOGIN */

@@ -10,7 +10,10 @@ class New extends Component {
 
         this.state = {
             title: '',
-            description: ''
+            description: '',
+            image_link: '',
+            file_link: '',
+            username: ''
         }
     }
 
@@ -21,7 +24,7 @@ class New extends Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        axios.post('http://localhost:5000/newpost', this.state)
+        axios.post('http://localhost:5000/api/newpost', this.state)
         .then(res => {
             console.log(res)
         })
@@ -31,13 +34,15 @@ class New extends Component {
     }
 
     render() {
-        const { title, description } = this.state
+        const { title, description, image_link, file_link } = this.state
         return(
             <div>
                 <SearchBar />
                 <Nav />
                 <div className="newPost">
+                    <h3>submit a post</h3>
                     <form onSubmit={this.submitHandler}>
+                        <p>title</p>
                         <div>
                             <input 
                                 type="text" 
@@ -46,16 +51,34 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
+                        <p>image link</p>
                         <div>
-                            <input 
-                            type="text" 
-                            name="description" 
-                            value={description}
-                            onChange={this.changeHandler}
+                            <input
+                                placeholder="optional"
+                                type="text" 
+                                name="image_link"
+                                value={image_link}
+                                onChange={this.changeHandler}
                             />
                         </div>
+                        <p>file link</p>
                         <div>
-                            <input type="text" name=""/>
+                            <input
+                                placeholder="optional"
+                                type="text" 
+                                name="file_link"
+                                value={file_link}
+                                onChange={this.changeHandler}
+                            />
+                        </div>
+                        <p>description</p>
+                        <div>
+                            <textarea
+                                type="text" 
+                                name="description" 
+                                value={description}
+                                onChange={this.changeHandler}
+                            />
                         </div>
                         <button type="submit">submit</button>
                     </form>
