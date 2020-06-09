@@ -134,7 +134,7 @@ h1 {
 
 .card {
   background-color: rgb(155, 155, 155);
-  margin-left: 21%;
+  margin-left: 25%;
   display: flex;
   margin-bottom: 20px;
   border-bottom-left-radius: 10px;
@@ -186,6 +186,30 @@ h1 {
   color: rgb(220, 220, 220);
   font-family: 'Roboto';
   margin-left: 20px;
+}
+.postBody {
+  position: absolute;
+  display: none;
+}
+.expand {
+  margin-left: 21%;
+  position: absolute;
+}
+.expand button img {
+  height: 30px;
+  width: 30px;
+  margin-top: 110%;
+}
+.expand button img:hover {
+  height: 31px;
+  width: 31px;
+}
+.expand button {
+  border: none;
+  background-color: transparent;
+}
+.expand button:focus {
+  outline: none;
 }
 
 /* NEW POST */
