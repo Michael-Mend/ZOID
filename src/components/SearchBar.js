@@ -7,7 +7,7 @@ function SearchBar() {
     return (
         <div className="searchbar">
             <input type="text" placeholder="search" className="search"></input>
-            <Link to="/new"><img className="new" src={New}/></Link>
+            <Link to="/new"><img className="new" src={New} alt='' title='new post'/></Link>
         </div>
     )
 };

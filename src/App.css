@@ -134,7 +134,7 @@ h1 {
 
 .card {
   background-color: rgb(155, 155, 155);
-  margin-left: 21%;
+  margin-left: 25%;
   display: flex;
   margin-bottom: 20px;
   border-bottom-left-radius: 10px;
@@ -148,34 +148,112 @@ h1 {
   border-top-left-radius: 10px;
 }
 .title {
-  margin-left: 10%;
-  margin-top:8px;
-  color: rgb(220, 220, 220);
-  font-size: 30px;
+  margin-left: 5%;
+  margin-top:16px;
+  color: rgb(85, 85, 85);
+  font-size: 26px;
+  width: 500px;
   font-family: 'Roboto';
   font-weight: 100;
 }
 .postLink {
-  padding-left: 11%;
-  padding-right:10%;
+  padding-left: 7%;
+  padding-right:6%;
   color: rgb(220, 220, 220);
   text-decoration: none;
   border-right: solid;
   border-width: 1px;
 }
 .postLink0 {
-  padding-left: 11%;
-  padding-right:10%;
+  padding-left: 7%;
+  padding-right:6%;
   color: rgb(220, 220, 220);
   text-decoration: none;
-}
-.postLinks {
-  margin-top: -8px;
 }
 .postLink:hover {
   text-decoration: underline;
 }
 .postLink0:hover {
+  text-decoration: underline;
+}
+.titleDiv {
+  display: flex;
+}
+.titleDiv h4 {
+  font-weight: 100;
+  color: rgb(220, 220, 220);
+  font-family: 'Roboto';
+  margin-left: 20px;
+}
+.hidden {
+  position: fixed;
+  display: none;
+}
+.expand {
+  margin-left: 21%;
+  position: absolute;
+}
+.expand button img {
+  height: 30px;
+  width: 30px;
+  margin-top: 110%;
+  border-radius: 2px;
+}
+.expand button img:hover {
+  border-radius: 20px;
+  background-color: rgb(200, 200, 200);
+}
+.expand button {
+  border: none;
+  background-color: transparent;
+}
+.expand button:focus {
+  outline: none;
+}
+.usrnm:hover {
+  text-decoration: underline;
+}
+.expanded {
+  background-color: rgb(155, 155, 155);
+  color: rgb(106, 106, 106);
+  font-family: 'Roboto';
+  width: 2000%;
+  left: 230%;
+  padding-left: 40px;
+  position: absolute;
+  border: solid;
+  border-radius: 10px;
+  border-width: 2px;
+}
+.expanded div {
+  display: flex;
+}
+.expanded * {
+  color: rgb(220, 220, 220) ;
+}
+.expanded h3 {
+  font-weight: 200;
+  font-size: 30px;
+  margin-top: 45px;
+}
+.expanded div img {
+  max-width: 400px;
+  padding-right: 40px;
+  padding-bottom: 60px;
+}
+.expanded div p {
+  font-size: 20px;
+  padding-right: 40px;
+  padding-bottom: 60px;
+}
+.expanded div button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  font-weight: 100;
+}
+.expanded div button:hover {
   text-decoration: underline;
 }
 
@@ -184,35 +262,41 @@ h1 {
 .newPost {
   color: rgb(220, 220, 220);
   width: 78%;
-  height: 655px;
   margin-left: 22%;
   background-color: rgb(155, 155, 155);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  padding-bottom: 3%;
 }
-.newPost div button {
-  background-color: transparent;
+.newPost form {
+  margin-left: 5%;
+}
+.newPost form button {
   border: none;
+  font-family: 'Roboto';
+  background-color: rgb(200, 200, 200);
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  border-bottom: solid;
+  border-right: solid;
+  color: rgb(106, 106, 106);
+  width: 100px;
+  text-align: center;
+  border-width: 2px;
 }
-.newPost div button img {
-  height: 50px;
+.newPost form button:focus {
+  outline: none;
 }
-.newPost div button img:hover {
-  height: 52px;
+.newPost form button:hover {
+  width: 101px;
 }
-.newPost div h2 {
-  font-size: 30px;
-  font-weight: 500;
-}
-.newPost div div {
-  display: flex;
-}
-.newPost div input {
+.newPost form input {
   font-family: 'Roboto';
   color: rgb(106, 106, 106);
   border-radius: 9px;
   background-color: rgb(200, 200, 200);
-  width: 98%;
+  width: 40%;
   line-height: 20px;
   height: 35px;
   font-size: 20px;
@@ -220,44 +304,30 @@ h1 {
   border-left: none;
   border-color: rgb(116, 116, 116);
 }
-.newPost div textarea {
+.newPost form textarea {
   font-family: 'Roboto';
   color: rgb(106, 106, 106);
   border-radius: 9px;
   background-color: rgb(200, 200, 200);
-  width: 98%;
   line-height: 20px;
+  height: 250px;
+  width: 85%;
   font-size: 20px;
   border-top: none;
   border-left: none;
-  border-width: 2px;
-  height: 220px;
   border-color: rgb(116, 116, 116);
-  resize: none;
 }
-.newPost div *:focus {
+.newPost form div {
+  margin-bottom: 10px;
+}
+.newPost h3 {
+  font-size: 30px;
+  padding-top: 3%;
+  margin-left: 5%;
+  font-weight: 100;
+}
+.newPost *:focus {
   outline: none;
-}
-.newPost div {
-  margin-left: 3%;
-  padding-top: 1%;
-}
-.newPost div div a {
-  position: absolute;
-  right: 200px;
-  font-family: 'Roboto';
-  background-color: rgb(200, 200, 200);
-  padding: 30px;
-  font-size: 20px;
-  top: 655px;
-  border-radius: 10px;
-  text-decoration: none;
-  border-bottom: solid;
-  border-right: solid;
-  color: rgb(106, 106, 106);
-}
-.newPost div div a:hover {
-  padding: 31px;
 }
 
 /* SIGNUP LOGIN */

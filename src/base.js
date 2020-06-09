@@ -2,14 +2,14 @@ import * as firebase from 'firebase';
 import "firebase/auth";
 
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyAux8KfDWKtAUkvmv32mGBoqYyMYcgHmt8",
-    authDomain: "zoid-f75ed.firebaseapp.com",
-    databaseURL: "https://zoid-f75ed.firebaseio.com",
-    projectId: "zoid-f75ed",
-    storageBucket: "zoid-f75ed.appspot.com",
-    messagingSenderId: "524204953730",
-    appId: "1:524204953730:web:efed5d9c4070cadeba249b",
-    measurementId: "G-BVVLCH1YCQ"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DB_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MSG_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+    measurementId: process.env.REACT_APP_MESUREMENT_ID
 });
 
 export default app;

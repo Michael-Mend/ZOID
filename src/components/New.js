@@ -1,34 +1,95 @@
-import React from "react";
-import Plus from "../images/new.png";
+import React, { Component } from "react";
 import Nav from "./Nav";
 import SearchBar from "./SearchBar";
-import { Link } from "react-router-dom";
 import "../App.css";
+import axios from 'axios';
+import firebase from 'firebase';
+import { Link } from "react-router-dom";
 
-function New() {
-    return(
-        <div>
-            <SearchBar />
-            <Nav />
-            <div className="newPost">
-                <div>
-                    <h2 className="titleLabel">Post Title</h2>
-                    <input type='text'></input>
-                    <h2 className="descLabel">Post Description</h2>
-                    <textarea></textarea>
-                    <div>
-                        <button><img className="newImg" src={Plus} alt=''/></button>
-                        <h2 className="imgLabel">Add Images</h2>
-                    </div>
-                    <div>
-                        <button><img className="newFile" src={Plus} alt=''/></button>
-                        <h2 className="fileLabel">Add File</h2>
-                        <Link to='/'>Submit</Link>
-                    </div>
+class New extends Component {
+    constructor(props) {
+        const user = firebase.auth().currentUser;
+
+        super(props) 
+
+        this.state = {
+            title: '',
+            description: '',
+            image_link: '',
+            file_link: '',
+            username: user.displayName
+        }
+    }
+
+    changeHandler = e => {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    submitHandler = e => {
+        e.preventDefault()
+        console.log(this.state)
+        axios.post('http://localhost:5000/api/newpost', this.state)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        }) 
+    }
+
+    render() {
+        const { title, description, image_link, file_link } = this.state
+        return(
+            <div>
+                <SearchBar />
+                <Nav />
+                <div className="newPost">
+                    <h3>submit a post</h3>
+                    <form onSubmit={this.submitHandler}>
+                        <p>title</p>
+                        <div>
+                            <input 
+                                type="text" 
+                                name="title" 
+                                value={title}
+                                onChange={this.changeHandler}
+                            />
+                        </div>
+                        <p>image link</p>
+                        <div>
+                            <input
+                                placeholder="optional"
+                                type="text" 
+                                name="image_link"
+                                value={image_link}
+                                onChange={this.changeHandler}
+                            />
+                        </div>
+                        <p>file link</p>
+                        <div>
+                            <input
+                                placeholder="optional"
+                                type="text" 
+                                name="file_link"
+                                value={file_link}
+                                onChange={this.changeHandler}
+                            />
+                        </div>
+                        <p>description</p>
+                        <div>
+                            <textarea
+                                type="text" 
+                                name="description" 
+                                value={description}
+                                onChange={this.changeHandler}
+                            />
+                        </div>
+                        <button type="submit">submit</button>
+                    </form>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default New;
+export default New

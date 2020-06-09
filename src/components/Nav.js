@@ -1,11 +1,9 @@
 import React from "react";
 import '../App.css'
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function Nav() {
-    const location = useLocation();
-
     return (
         <div className="tabs">
             <h5 className="tab0"><Link className='link active' to='/'>Dashboard</Link></h5>
@@ -17,3 +15,4 @@ function Nav() {
 };
 
  export default Nav;
+ 
