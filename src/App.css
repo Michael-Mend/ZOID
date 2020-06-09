@@ -148,29 +148,27 @@ h1 {
   border-top-left-radius: 10px;
 }
 .title {
-  margin-left: 10%;
-  margin-top:8px;
-  color: rgb(220, 220, 220);
-  font-size: 30px;
+  margin-left: 5%;
+  margin-top:16px;
+  color: rgb(85, 85, 85);
+  font-size: 26px;
+  width: 500px;
   font-family: 'Roboto';
   font-weight: 100;
 }
 .postLink {
-  padding-left: 11%;
-  padding-right:10%;
+  padding-left: 7%;
+  padding-right:6%;
   color: rgb(220, 220, 220);
   text-decoration: none;
   border-right: solid;
   border-width: 1px;
 }
 .postLink0 {
-  padding-left: 11%;
-  padding-right:10%;
+  padding-left: 7%;
+  padding-right:6%;
   color: rgb(220, 220, 220);
   text-decoration: none;
-}
-.postLinks {
-  margin-top: -8px;
 }
 .postLink:hover {
   text-decoration: underline;
@@ -187,8 +185,8 @@ h1 {
   font-family: 'Roboto';
   margin-left: 20px;
 }
-.postBody {
-  position: absolute;
+.hidden {
+  position: fixed;
   display: none;
 }
 .expand {
@@ -199,10 +197,13 @@ h1 {
   height: 30px;
   width: 30px;
   margin-top: 110%;
+  padding-bottom: 5px;
+  border-radius: 2px;
 }
 .expand button img:hover {
-  height: 31px;
-  width: 31px;
+  border-bottom: solid;
+  border-width: 2px;
+  color: rgb(155, 155, 155) ;
 }
 .expand button {
   border: none;
@@ -210,6 +211,30 @@ h1 {
 }
 .expand button:focus {
   outline: none;
+}
+.usrnm:hover {
+  text-decoration: underline;
+}
+.expanded {
+  background-color: rgb(155, 155, 155);
+  color: rgb(106, 106, 106);
+  font-family: 'Roboto';
+  width: 2000%;
+  left: 230%;
+  padding: 20px;
+  position: absolute;
+  border: solid;
+  border-radius: 10px;
+  border-width: 2px;
+}
+.expanded * {
+  color: rgb(220, 220, 220) ;
+}
+.close {
+  color: rgb(220, 220, 220);
+}
+.close:hover {
+  text-decoration: underline;
 }
 
 /* NEW POST */
