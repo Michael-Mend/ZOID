@@ -33,7 +33,7 @@ class Home extends Component {
         .catch(err => {
           console.log(err)
         })
-    }
+    }   
     
     render() {
         let {data} = this.state

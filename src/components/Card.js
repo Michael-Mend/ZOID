@@ -14,7 +14,6 @@ class Card extends Component {
     expand = () => {
        this.setState({class: 'expanded'})
     }
-
     close = () => {
         this.setState({class: 'hidden'})
     }
@@ -25,10 +24,15 @@ class Card extends Component {
                 <div className='expand'>
                     <button onClick={this.expand}><img  src={expand} alt=''/></button>
                     <div className={this.state.class}>
-                        <button onClick={this.close} className='close'>close</button>
-                        <h3 className='title0'>{this.props.card.title}</h3>
-                        <p>{this.props.card.description}</p>
-                        <img alt='' src={this.props.card.image_link}/>
+                        <div>
+                            <button onClick={this.close}>close</button>
+                            <h3 className='title0'>{this.props.card.title}</h3>
+                        </div>
+                        <div>
+                            <img alt='' src={this.props.card.image_link}/>
+                            <p>{this.props.card.description}</p>
+                        </div>
+                        <div></div>
                     </div>
                 </div>
                 <div className='card'>
