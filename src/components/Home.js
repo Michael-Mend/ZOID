@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import Nav from "./Nav";
 import Card from "./Card";
 import axios from 'axios';
-
+import Thumb from '../images/ph.png'
 
 class Home extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class Home extends Component {
         this.state = {
             title: '',
             description: '',
-            image_link: '',
+            image_link: Thumb,
             file_link: '',
             username: '',
             data: []

@@ -84,7 +84,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <Link to='/'><button type="submit">submit</button></Link>
+                        <button type="submit">submit</button>
                     </form>
                 </div>
             </div>

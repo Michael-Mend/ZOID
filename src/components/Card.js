@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../App.css';
-import expand from '../images/new2.png'
+import expand from '../images/new2.png';
 
 class Card extends Component {
     constructor(props) {
