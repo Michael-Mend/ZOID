@@ -8,7 +8,7 @@ const CommentSchema = new Schema({
         trim: true,
     },
 
-    description: {
+    comment: {
         type: String,
         required: true,
         minlength: 20,

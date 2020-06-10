@@ -4,7 +4,6 @@ import SearchBar from "./SearchBar";
 import "../App.css";
 import axios from 'axios';
 import firebase from 'firebase';
-import { Link } from "react-router-dom";
 
 class New extends Component {
     constructor(props) {

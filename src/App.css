@@ -5,7 +5,6 @@ body {
   background-color: rgb(220, 220, 220);
 }
 
-
 /* HEADER */
 
 h1 {
@@ -170,6 +169,23 @@ h1 {
   color: rgb(220, 220, 220);
   text-decoration: none;
 }
+.postLink1 {
+  padding-left: 9%;
+  padding-right:9%;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+  border-right: solid;
+  border-width: 1px;
+}
+.postLinks1 {
+  padding-bottom: 20px;
+}
+.postLink01 {
+  padding-left: 9%;
+  padding-right:9%;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+}
 .postLink:hover {
   text-decoration: underline;
 }
@@ -186,7 +202,6 @@ h1 {
   margin-left: 20px;
 }
 .hidden {
-  position: fixed;
   display: none;
 }
 .expand {
@@ -223,7 +238,7 @@ h1 {
   position: absolute;
   border: solid;
   border-radius: 10px;
-  border-width: 2px;
+  border-width: 1px;
 }
 .expanded div {
   display: flex;
@@ -245,6 +260,7 @@ h1 {
   font-size: 20px;
   padding-right: 40px;
   padding-bottom: 60px;
+  padding-top: 20px;
 }
 .expanded div button {
   position: absolute;
@@ -255,6 +271,49 @@ h1 {
 }
 .expanded div button:hover {
   text-decoration: underline;
+}
+.postBody {
+  display: block;
+  position: relative;
+}
+.qLinks {
+  position: absolute;
+}
+.qLinks a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: rgb(85, 85, 85);
+}
+.qLinks a:hover {
+  text-decoration: underline;
+}
+.newComment {
+  padding-bottom: 20px;
+}
+.newComment textarea {
+  font-size: 14;
+  font-family: 'Roboto';
+  color: rgb(106, 106, 106);
+  border-radius: 9px;
+  background-color: rgb(200, 200, 200);
+  line-height: 20px;
+  height: 75px;
+  width: 95%;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-color: rgb(116, 116, 116);
+  padding: 5px;
+}
+.newComment textarea:focus {
+  outline: none;
+}
+.newComment button {
+  margin-top: 7px;
+  color: rgb(106, 106, 106);
+  background-color: rgb(200, 200, 200);
+  border-radius: 7px;
+  padding: 4px;
 }
 
 /* NEW POST */

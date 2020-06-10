@@ -1,14 +1,35 @@
 import React, { Component } from "react";
 import '../App.css';
 import expand from '../images/new2.png';
+import axios from 'axios';
+import firebase from 'firebase';
 
 class Card extends Component {
     constructor(props) {
+        const user = firebase.auth().currentUser;
+
         super(props) 
 
         this.state = {
-           class: 'hidden'
+           class: 'hidden',
+           comment: '',
+           username: user.displayName
         }
+    }
+
+    changeHandler = e => {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    submitHandler = e => {
+        e.preventDefault()
+        axios.post('http://localhost:5000/api/comment', this.state)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        }) 
     }
 
     expand = () => {
@@ -18,7 +39,19 @@ class Card extends Component {
         this.setState({class: 'hidden'})
     }
 
+    delete = e => {
+        e.preventDefault()
+        axios.delete('http://localhost:5000/api/delete/' + this.props.card._id)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        }) 
+    }
+    
     render() {
+        const { comment } = this.state
         return (
             <div className='cardMain'>
                 <div className='expand'>
@@ -29,22 +62,42 @@ class Card extends Component {
                             <h3 className='title0'>{this.props.card.title}</h3>
                         </div>
                         <div>
-                            <img alt='' src={this.props.card.image_link}/>
-                            <p>{this.props.card.description}</p>
+                            <img alt={this.props.card.title} src={this.props.card.image_link}/>
+                            <div className='postBody'>
+                                <p>{this.props.card.description}</p>
+                                <div className='qLinks'>
+                                    <a href={this.props.card.image_link}>image link</a>
+                                    <a href={this.props.card.file_link}>download link</a>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div></div>
+                        <div className='postLinks1'> 
+                            <a className='postLink1' href='/'>follow</a>
+                            <a className='postLink1' href='/'>share</a>
+                            <a className='postLink1' href='/'>save</a>
+                            <a className='postLink01' href='/'>report</a>
+                        </div>
+                        <form className='newComment' onSubmit={this.submitHandler}>
+                            <textarea 
+                                name='comment' 
+                                value={comment} 
+                                placeholder='add a comment...'
+                                onChange={this.changeHandler}
+                                ></textarea>
+                            <button type="submit">submit comment</button>
+                        </form>
                     </div>
                 </div>
                 <div className='card'>
-                    <img title='reveal post' className='thumb' alt='' src={this.props.card.image_link}/>
+                    <img title='reveal post' className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
                     <div> 
                         <div className='titleDiv'>
                             <h4 className='usrnm'> {this.props.card.username} </h4>
                             <h3 className='title'>{this.props.card.title}</h3>
+                            <button onClick={this.delete}>delete</button>
                         </div>
                         <div className='postLinks'> 
-                            <a className='postLink' href='/'>comment</a>
-                            <a className='postLink' href='/'>download</a>
                             <a className='postLink' href='/'>follow</a>
                             <a className='postLink' href='/'>share</a>
                             <a className='postLink' href='/'>save</a>
