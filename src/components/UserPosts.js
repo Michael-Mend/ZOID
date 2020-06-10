@@ -5,9 +5,12 @@ import Nav from "./Nav";
 import Card from "./Card";
 import axios from 'axios';
 import Thumb from '../images/ph.png'
+import firebase from 'firebase';
 
-class Home extends Component {
+class UserPosts extends Component {
     constructor(props) {
+        const user = firebase.auth().currentUser;
+
         super(props) 
 
         this.state = {
@@ -15,14 +18,14 @@ class Home extends Component {
             description: '',
             image_link: Thumb,
             file_link: '',
-            username: '',
+            username: user.displayName,
             data: [],
-            dlt: 'hidden'
+            dlt: 'delete'
         }
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/posts')
+        axios.get('http://localhost:5000/api/myposts/' + this.state.username)
         .then(res => {
           console.log(res.data)
           const data = res.data
@@ -50,4 +53,4 @@ class Home extends Component {
     }
 };
 
-export default Home;
+export default UserPosts;

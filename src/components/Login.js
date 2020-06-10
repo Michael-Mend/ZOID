@@ -8,6 +8,7 @@ import { AuthContext } from '../Auth.js';
 
 
 const Login = ({ history }) => {
+    
     const handleLogin = useCallback(
         async event => {
             event.preventDefault();
@@ -35,7 +36,7 @@ const Login = ({ history }) => {
             <SearchBar />
             <Nav />
             <form onSubmit={handleLogin} className="signUpForm">
-                <p className="usernameLabel">username</p>
+                <p className="usernameLabel">email</p>
                 <input name='email' id='username' type="email"></input>
                 <p>password</p>
                 <input name='password' id='password' className="passwordInput" type="password"></input>
