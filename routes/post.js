@@ -34,14 +34,26 @@ app.post('/newpost', (req, res) => {
         })
 })
 
-app.put('/comment', (req, res) =>{
-    Comment.update(req.body)
-        .then( comment => {
-            console.log(comment);
-            res.json(comment);
-        }) 
-        .catch(err => {
-            res.status(400).json(err);
+app.post('/comment', (req, res) =>{
+    console.log(req.body)
+    Comment.create(req.body)
+    .then(post => {
+        console.log(post)
+        res.json(post);
+     })
+    .catch(err => {
+        console.log(err)
+    })
+        
+})
+
+app.get('/comment/:id', (req, res) => {
+    Comment.find({ postID: req.params.id})
+        .then(comments => {
+            res.json(comments);
+        })
+        .catch(err =>{
+            res.json(err);
         })
 })
 

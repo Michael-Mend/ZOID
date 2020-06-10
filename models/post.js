@@ -9,6 +9,7 @@ const PostSchema = new Schema({
     title: {
         type: String,
         required: true,
+        trim: true,
         minlength: 3,
         maxlength: 50
     },
@@ -16,28 +17,30 @@ const PostSchema = new Schema({
     description: {
         type: String,
         required: true,
+        trim: true,
         minlength: 20,
         maxlength: 1000
     },
 
+    tag: {
+        type: String,
+        trim: true,
+    },
+
     image_link: {
         type: String,
+        trim: true,
     },
 
     file_link: {
         type: String,
+        trim: true,
     },
 
     likes: {
         type: Number,
-    }, 
-
-    comments: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'comment'
-        }
-    ]
+        trim: true,
+    }
 },{
     timestamps: true
 });

@@ -16,6 +16,7 @@ class New extends Component {
             description: '',
             image_link: '',
             file_link: '',
+            tag: '',
             username: user.displayName
         }
     }
@@ -31,13 +32,16 @@ class New extends Component {
         .then(res => {
             console.log(res)
         })
+        .then(
+            window.location.replace('/')
+        )
         .catch(err => {
             console.log(err)
         }) 
     }
 
     render() {
-        const { title, description, image_link, file_link } = this.state
+        const { title, description, image_link, file_link, tag } = this.state
         return(
             <div>
                 <SearchBar />
@@ -54,10 +58,19 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
+                        <p>tag</p>
+                        <div>
+                            <input
+                                type="text" 
+                                name="tag" 
+                                value={tag}
+                                onChange={this.changeHandler}
+                            />
+                        </div>
                         <p>image link</p>
                         <div>
                             <input
-                                placeholder="optional"
+                                placeholder="must be a direct image link"
                                 type="text" 
                                 name="image_link"
                                 value={image_link}
@@ -67,7 +80,6 @@ class New extends Component {
                         <p>file link</p>
                         <div>
                             <input
-                                placeholder="optional"
                                 type="text" 
                                 name="file_link"
                                 value={file_link}

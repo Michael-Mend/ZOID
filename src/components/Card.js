@@ -3,6 +3,7 @@ import '../App.css';
 import expand from '../images/new2.png';
 import axios from 'axios';
 import firebase from 'firebase';
+import Comment from './Comment';
 
 class Card extends Component {
     constructor(props) {
@@ -13,8 +14,24 @@ class Card extends Component {
         this.state = {
            class: 'hidden',
            comment: '',
-           username: user.displayName
+           username: user.displayName,
+           postID: this.props.card._id,
+           res: []
         }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:5000/api/comment/' + this.state.postID)
+        .then(res => {
+            console.log(res.data)
+            const data = res.data
+            this.setState({
+                res: data
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        }) 
     }
 
     changeHandler = e => {
@@ -23,7 +40,7 @@ class Card extends Component {
 
     submitHandler = e => {
         e.preventDefault()
-        axios.post('http://localhost:5000/api/comment', this.state)
+        axios.post('http://localhost:5000/api/comment/', this.state)
         .then(res => {
             console.log(res)
         })
@@ -45,13 +62,16 @@ class Card extends Component {
         .then(res => {
             console.log(res)
         })
+        .then(
+            window.location.replace('/')
+        )
         .catch(err => {
             console.log(err)
         }) 
     }
     
     render() {
-        const { comment } = this.state
+        const { comment, res } = this.state
         return (
             <div className='cardMain'>
                 <div className='expand'>
@@ -70,7 +90,6 @@ class Card extends Component {
                                     <a href={this.props.card.file_link}>download link</a>
                                 </div>
                             </div>
-                            
                         </div>
                         <div className='postLinks1'> 
                             <a className='postLink1' href='/'>follow</a>
@@ -87,6 +106,10 @@ class Card extends Component {
                                 ></textarea>
                             <button type="submit">submit comment</button>
                         </form>
+                        <h3>Comments</h3>
+                        {res.map( comment => {
+                            return <Comment key={comment._id} comment={comment}/>
+                        })}
                     </div>
                 </div>
                 <div className='card'>
@@ -95,7 +118,7 @@ class Card extends Component {
                         <div className='titleDiv'>
                             <h4 className='usrnm'> {this.props.card.username} </h4>
                             <h3 className='title'>{this.props.card.title}</h3>
-                            <button onClick={this.delete}>delete</button>
+                            <button className={this.props.dlt} onClick={this.delete}>delete</button>
                         </div>
                         <div className='postLinks'> 
                             <a className='postLink' href='/'>follow</a>

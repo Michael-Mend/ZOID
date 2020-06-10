@@ -19,7 +19,8 @@ class UserPosts extends Component {
             image_link: Thumb,
             file_link: '',
             username: user.displayName,
-            data: []
+            data: [],
+            dlt: 'delete'
         }
     }
 
@@ -39,13 +40,13 @@ class UserPosts extends Component {
     }   
     
     render() {
-        let {data} = this.state
+        const { data, dlt } = this.state
         return (
             <div>
                 <SearchBar />
                 <Nav />
                 {data.map( card => {
-                    return <Card card={card} />
+                    return <Card card={card} dlt={dlt} />
                 })}
             </div>
         )

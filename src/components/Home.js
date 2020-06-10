@@ -16,7 +16,8 @@ class Home extends Component {
             image_link: Thumb,
             file_link: '',
             username: '',
-            data: []
+            data: [],
+            dlt: 'hidden'
         }
     }
 
@@ -36,13 +37,13 @@ class Home extends Component {
     }   
     
     render() {
-        let {data} = this.state
+        const { data, dlt } = this.state
         return (
             <div>
                 <SearchBar />
                 <Nav />
                 {data.map( card => {
-                    return <Card card={card} />
+                    return <Card card={card} dlt={dlt} />
                 })}
             </div>
         )
