@@ -10,7 +10,7 @@ class Header extends Component {
         super(props)
 
         this.state = {
-            logSign: 'hidden',
+            logSign: 'logSign',
             signout: 'signout',
         }
     }
