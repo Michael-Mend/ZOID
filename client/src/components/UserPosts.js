@@ -25,7 +25,7 @@ class UserPosts extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/myposts/' + this.state.username)
+        axios.get(process.env.ATLAS_URI || 'http://localhost:5000/api/myposts/' + this.state.username)
         .then(res => {
           console.log(res.data)
           const data = res.data
