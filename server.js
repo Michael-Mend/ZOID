@@ -10,7 +10,9 @@ app.use(cors());
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
 
 mongoose.connect(process.env.ATLAS_URI || 'mongodb://localhost/zoid',  { useNewUrlParser: true });
 
