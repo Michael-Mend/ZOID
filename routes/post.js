@@ -66,4 +66,27 @@ app.delete('/delete/:id', (req, res) => {
         
 })
 
+app.get('/edit/:id', (req, res) => {
+    Post.find({_id: req.params.id})
+        .then(post => {
+            res.json(post);
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+app.put('/edit/:id', (req, res) => {
+    const conditions = {_id: req.params.id}
+    console.log(req.body)
+    Post.updateOne(conditions, req.body)
+    .then(post => {
+        if (!post) { return res.status(404).end(); }
+        return res.status(200).json(post)
+    })
+    .catch( err => {
+        res.json(err)
+    })
+})
+
 module.exports = app;

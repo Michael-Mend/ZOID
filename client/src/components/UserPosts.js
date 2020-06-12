@@ -3,6 +3,7 @@ import "../App.css";
 import SearchBar from "./SearchBar";
 import Nav from "./Nav";
 import Card from "./Card";
+import User from "./User";
 import axios from 'axios';
 import Thumb from '../images/ph.png'
 import firebase from 'firebase';
@@ -20,19 +21,18 @@ class UserPosts extends Component {
             file_link: '',
             username: user.displayName,
             data: [],
-            dlt: 'delete'
+            dlt: 'delete',
+            edit: 'edit'
         }
     }
 
     componentDidMount() {
         axios.get('http://localhost:5000/api/myposts/' + this.state.username)
         .then(res => {
-          console.log(res.data)
           const data = res.data
           this.setState({
               data: data
           })
-          console.log(this.state.data)
         })
         .catch(err => {
           console.log(err)
@@ -40,13 +40,14 @@ class UserPosts extends Component {
     }   
     
     render() {
-        const { data, dlt } = this.state
+        const { data, dlt, edit } = this.state
         return (
             <div>
+                <User />
                 <SearchBar />
                 <Nav />
                 {data.map( card => {
-                    return <Card card={card} dlt={dlt} />
+                    return <Card card={card} dlt={dlt} edit={edit} />
                 })}
             </div>
         )

@@ -4,6 +4,7 @@ import expand from '../images/new2.png';
 import axios from 'axios';
 import firebase from 'firebase';
 import Comment from './Comment';
+import { Link } from "react-router-dom";
 
 class Card extends Component {
     constructor(props) {
@@ -118,6 +119,7 @@ class Card extends Component {
                         <div className='titleDiv'>
                             <h4 className='usrnm'> {this.props.card.username} </h4>
                             <h3 className='title'>{this.props.card.title}</h3>
+                            <Link className={this.props.edit} to={"edit/" + this.state.postID} >edit</Link>
                             <button className={this.props.dlt} onClick={this.delete}>delete</button>
                         </div>
                         <div className='postLinks'> 

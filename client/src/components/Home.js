@@ -3,6 +3,7 @@ import "../App.css";
 import SearchBar from "./SearchBar";
 import Nav from "./Nav";
 import Card from "./Card";
+import User from "./User";
 import axios from 'axios';
 import Thumb from '../images/ph.png'
 
@@ -17,7 +18,8 @@ class Home extends Component {
             file_link: '',
             username: '',
             data: [],
-            dlt: 'hidden'
+            dlt: 'hidden',
+            edit: 'hidden'
         }
     }
 
@@ -37,13 +39,14 @@ class Home extends Component {
     }   
     
     render() {
-        const { data, dlt } = this.state
+        const { data, dlt, edit } = this.state
         return (
             <div>
+                <User />
                 <SearchBar />
                 <Nav />
                 {data.map( card => {
-                    return <Card card={card} dlt={dlt} />
+                    return <Card card={card} dlt={dlt} edit={edit} />
                 })}
             </div>
         )
