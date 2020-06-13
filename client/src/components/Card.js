@@ -70,6 +70,11 @@ class Card extends Component {
             console.log(err)
         }) 
     }
+
+    follow = e => {
+        e.preventDefault()
+        axios.update('http://localhost:5000/api/follow/', this.props.card.username)
+    }
     
     render() {
         const { comment, res } = this.state

@@ -3,14 +3,15 @@ import "../App.css";
 import SearchBar from "./SearchBar";
 import Nav from "./Nav";
 import Card from "./Card";
-import User from "./User";
 import axios from 'axios';
-import Thumb from '../images/ph.png'
+import Thumb from '../images/ph.png';
+import app from '../base';
+import firebase from 'firebase';
 
 class Home extends Component {
     constructor(props) {
         super(props) 
-
+        const user = firebase.auth().currentUser.displayName;
         this.state = {
             title: '',
             description: '',
@@ -19,7 +20,8 @@ class Home extends Component {
             username: '',
             data: [],
             dlt: 'hidden',
-            edit: 'hidden'
+            edit: 'hidden',
+            user: user
         }
     }
 
@@ -39,10 +41,13 @@ class Home extends Component {
     }   
     
     render() {
-        const { data, dlt, edit } = this.state
+        const { data, dlt, edit, user } = this.state
         return (
             <div>
-                <User />
+                <div className='userDiv'>
+                    <p>{user}</p>
+                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
+                </div>
                 <SearchBar />
                 <Nav />
                 {data.map( card => {

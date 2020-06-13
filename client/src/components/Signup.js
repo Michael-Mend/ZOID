@@ -3,6 +3,7 @@ import app from '../base';
 import "../App.css";
 import { withRouter } from 'react-router';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Signup = ({ history }) => {
     const handleSignUp = useCallback(async event => {
@@ -17,10 +18,18 @@ const Signup = ({ history }) => {
                         displayName: displayName.value
                     })
                 });
+            axios.post('http://localhost:5000/api/user', displayName.value)
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
             history.push('/');
         } catch (error) {
             alert(error)
         }
+        
     }, [history]);
 
     return (

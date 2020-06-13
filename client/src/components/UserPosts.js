@@ -3,10 +3,10 @@ import "../App.css";
 import SearchBar from "./SearchBar";
 import Nav from "./Nav";
 import Card from "./Card";
-import User from "./User";
 import axios from 'axios';
-import Thumb from '../images/ph.png'
+import Thumb from '../images/ph.png';
 import firebase from 'firebase';
+import app from '../base';
 
 class UserPosts extends Component {
     constructor(props) {
@@ -40,10 +40,13 @@ class UserPosts extends Component {
     }   
     
     render() {
-        const { data, dlt, edit } = this.state
+        const { data, dlt, edit, username } = this.state
         return (
             <div>
-                <User />
+                <div className='userDiv'>
+                    <p>{username}</p>
+                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
+                </div>
                 <SearchBar />
                 <Nav />
                 {data.map( card => {
