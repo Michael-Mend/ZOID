@@ -22,7 +22,7 @@ class Card extends Component {
     }
 
     componentDidMount() {
-        axios.get(process.env.ATLAS_URI || 'http://localhost:5000/api/comment/' + this.state.postID)
+        axios.get('/api/comment/' + this.state.postID)
         .then(res => {
             console.log(res.data)
             const data = res.data
@@ -41,7 +41,7 @@ class Card extends Component {
 
     submitHandler = e => {
         e.preventDefault()
-        axios.post(process.env.ATLAS_URI || 'http://localhost:5000/api/comment/', this.state)
+        axios.post('/api/comment/', this.state)
         .then(res => {
             console.log(res)
         })
@@ -59,7 +59,7 @@ class Card extends Component {
 
     delete = e => {
         e.preventDefault()
-        axios.delete(process.env.ATLAS_URI || 'http://localhost:5000/api/delete/' + this.props.card._id)
+        axios.delete('/api/delete/' + this.props.card._id)
         .then(res => {
             console.log(res)
         })
@@ -73,7 +73,7 @@ class Card extends Component {
 
     follow = e => {
         e.preventDefault()
-        axios.update('http://localhost:5000/api/follow/', this.props.card.username)
+        axios.update('/api/follow/', this.props.card.username)
     }
     
     render() {
