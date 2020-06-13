@@ -507,7 +507,7 @@ h1 {
 /* USER */
 
 .userDiv {
-  position: absolute;
+  position: fixed;
   color: rgb(116, 116, 116);
   z-index: 2;
   display: flex;

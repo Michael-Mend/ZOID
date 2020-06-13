@@ -41,10 +41,13 @@ class Card extends Component {
 
     submitHandler = e => {
         e.preventDefault()
-        axios.post('/api/comment/', this.state)
+        axios.post('/api/comment', this.state)
         .then(res => {
             console.log(res)
         })
+        .then(
+            window.location.replace('/')
+        )
         .catch(err => {
             console.log(err)
         }) 
