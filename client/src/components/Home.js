@@ -26,7 +26,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get(process.env.ATLAS_URI || 'http://localhost:5000/api/posts')
+        axios.get('/api/posts')
         .then(res => {
           console.log(res.data)
           const data = res.data

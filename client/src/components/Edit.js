@@ -23,7 +23,7 @@ class New extends Component {
 
     componentDidMount() {
         const { id } = this.props.match.params
-        axios.get('http://localhost:5000/api/edit/' + id )
+        axios.get('/api/edit/' + id )
         .then(res => {
             const data = res.data[0]
             this.setState({
@@ -43,7 +43,7 @@ class New extends Component {
 
     submitHandler = e => {
         e.preventDefault()
-        axios.put('http://localhost:5000/api/edit/' + this.state._id, this.state)
+        axios.put('/api/edit/' + this.state._id, this.state)
         .then(res => {
             console.log(res)
         })
