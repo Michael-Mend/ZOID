@@ -1,6 +1,7 @@
 const app = require("express").Router();
 const Post = require("../models/post");
 const Comment = require("../models/comment");
+const User = require("../models/user")
 
 app.get('/posts', (req, res) => {
     Post.find({})
@@ -64,6 +65,50 @@ app.delete('/delete/:id', (req, res) => {
             res.status(400).json(err);
         })
         
+})
+
+app.get('/edit/:id', (req, res) => {
+    Post.find({_id: req.params.id})
+        .then(post => {
+            res.json(post);
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+app.put('/edit/:id', (req, res) => {
+    const conditions = {_id: req.params.id}
+    console.log(req.body)
+    Post.updateOne(conditions, req.body)
+        .then(post => {
+            if (!post) { return res.status(404).end(); }
+            return res.status(200).json(post)
+        })
+        .catch( err => {
+            res.json(err)
+        })
+})
+
+app.get('/search/:tag', (req, res) => {
+    Post.find({tag: req.params.tag})
+        .then(search => {
+            res.json(search);
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+app.post('/user', (req,res) => {
+    User.create(req.body)
+    .then(user => {
+        console.log(user)
+        res.json(user);
+     })
+    .catch(err => {
+        console.log(err)
+    })
 })
 
 module.exports = app;

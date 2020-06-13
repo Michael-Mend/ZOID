@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
-import Nav from "./Nav";
-import SearchBar from "./SearchBar";
 import app from '../base';
 import "../App.css";
 import { withRouter } from 'react-router';
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Signup = ({ history }) => {
     const handleSignUp = useCallback(async event => {
@@ -18,16 +18,22 @@ const Signup = ({ history }) => {
                         displayName: displayName.value
                     })
                 });
+            axios.post('http://localhost:5000/api/user', displayName.value)
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
             history.push('/');
         } catch (error) {
             alert(error)
         }
+        
     }, [history]);
 
     return (
         <div>
-            <SearchBar />
-            <Nav />
             <form onSubmit={handleSignUp} className="signUpForm">
                 <p className="usernameLabel">username</p>
                 <input name='displayName' id='username' type='text'></input>
@@ -38,6 +44,10 @@ const Signup = ({ history }) => {
                 <p>repeat password</p>
                 <input className="passwordInput" type="password"></input>
                 <button type='submit' id='signup'>sign up</button>
+                <div className='l1'>
+                    <h4>Already have an account?</h4>
+                    <Link to='/login'>login</Link>
+                </div>
             </form>
         </div>
     )

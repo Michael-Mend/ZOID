@@ -232,7 +232,7 @@ h1 {
   background-color: rgb(155, 155, 155);
   color: rgb(106, 106, 106);
   font-family: 'Roboto';
-  width: 2000%;
+  width: 2200%;
   left: 230%;
   padding-left: 40px;
   position: absolute;
@@ -327,6 +327,18 @@ h1 {
 .delete:focus {
   outline: none;
 }
+.flex {
+  display: flex;
+}
+.edit {
+  margin-top: 42px;
+  font-size: 13px;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+}
+.edit:hover {
+  text-decoration: underline;
+}
 
 /* NEW POST */
 
@@ -376,6 +388,7 @@ h1 {
   border-color: rgb(116, 116, 116);
 }
 .newPost form textarea {
+  padding: 10px;
   font-family: 'Roboto';
   color: rgb(106, 106, 106);
   border-radius: 9px;
@@ -408,7 +421,8 @@ h1 {
   margin-left: 22%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+  margin-top:7%;
 }
 .signUpForm * {
   margin-left: 3%;
@@ -427,11 +441,16 @@ h1 {
   font-size: 20px;
   border-radius: 10px;
   text-decoration: none;
+  border: none;
   border-bottom: solid;
   border-right: solid;
   color: rgb(106, 106, 106);
   width: 100px;
   text-align: center;
+}
+.signUpForm button:focus {
+  outline: none;
+  border-color: rgb(200, 200, 200);
 }
 .signUpForm p {
   font-family: 'Roboto';
@@ -454,6 +473,21 @@ h1 {
 .signUpForm input:focus {
   outline: none;
 }
+.l1 {
+  display: flex;
+  color: rgb(200, 200, 200);
+}
+.l1 h4 {
+  font-weight: 100;
+}
+.l1 a {
+  margin-top: 21px;
+  color: rgb(220, 220, 220);
+  text-decoration: none;
+}
+.l1 a:hover {
+  text-decoration: underline;
+}
 
 /* COMMENT */
 
@@ -468,4 +502,22 @@ h1 {
 }
 .commentName {
   margin-left: 5%;
+}
+
+/* USER */
+
+.userDiv {
+  position: absolute;
+  color: rgb(116, 116, 116);
+  z-index: 2;
+  display: flex;
+  width: 20%;
+  margin-top: 113px;
+}
+.userDiv p {
+  margin-left: 37%;
+  font-size: 22px;
+}
+.userDiv button {
+  font-size: 14px;
 }

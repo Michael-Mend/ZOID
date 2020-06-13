@@ -1,11 +1,9 @@
 import React, { useCallback, useContext } from "react";
-import Nav from "./Nav";
-import SearchBar from "./SearchBar";
 import "../App.css";
 import { withRouter, Redirect } from 'react-router';
 import app from '../base.js';
 import { AuthContext } from '../Auth.js';
-
+import { Link } from "react-router-dom";
 
 const Login = ({ history }) => {
     
@@ -33,14 +31,16 @@ const Login = ({ history }) => {
 
     return (
         <div>
-            <SearchBar />
-            <Nav />
             <form onSubmit={handleLogin} className="signUpForm">
                 <p className="usernameLabel">email</p>
                 <input name='email' id='username' type="email"></input>
                 <p>password</p>
                 <input name='password' id='password' className="passwordInput" type="password"></input>
-                <button type='submit' id='login'>login</button>
+                <button type='submit' className='login'>login</button>
+                <div className='l1'>
+                    <h4>dont have an account?</h4>
+                    <Link to='/signup'>signup</Link>
+                </div>
             </form>
         </div>
     )

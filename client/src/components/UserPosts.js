@@ -4,8 +4,9 @@ import SearchBar from "./SearchBar";
 import Nav from "./Nav";
 import Card from "./Card";
 import axios from 'axios';
-import Thumb from '../images/ph.png'
+import Thumb from '../images/ph.png';
 import firebase from 'firebase';
+import app from '../base';
 
 class UserPosts extends Component {
     constructor(props) {
@@ -20,19 +21,18 @@ class UserPosts extends Component {
             file_link: '',
             username: user.displayName,
             data: [],
-            dlt: 'delete'
+            dlt: 'delete',
+            edit: 'edit'
         }
     }
 
     componentDidMount() {
         axios.get(process.env.ATLAS_URI || 'http://localhost:5000/api/myposts/' + this.state.username)
         .then(res => {
-          console.log(res.data)
           const data = res.data
           this.setState({
               data: data
           })
-          console.log(this.state.data)
         })
         .catch(err => {
           console.log(err)
@@ -40,13 +40,17 @@ class UserPosts extends Component {
     }   
     
     render() {
-        const { data, dlt } = this.state
+        const { data, dlt, edit, username } = this.state
         return (
             <div>
+                <div className='userDiv'>
+                    <p>{username}</p>
+                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
+                </div>
                 <SearchBar />
                 <Nav />
                 {data.map( card => {
-                    return <Card card={card} dlt={dlt} />
+                    return <Card card={card} dlt={dlt} edit={edit} />
                 })}
             </div>
         )
