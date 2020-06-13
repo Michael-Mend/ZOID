@@ -28,7 +28,7 @@ class New extends Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        axios.post('http://localhost:5000/api/newpost', this.state)
+        axios.post(process.env.ATLAS_URI || 'http://localhost:5000/api/newpost', this.state)
         .then(res => {
             console.log(res)
         })
