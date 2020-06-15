@@ -18,7 +18,10 @@ const Signup = ({ history }) => {
                         displayName: displayName.value
                     })
                 });
-            axios.post(process.env.ATLASURI + '/api/user', displayName.value)
+            const user = {
+                username: displayName.value
+            }
+            axios.post('/api/user/', user)
                 .then(res => {
                     console.log(res)
                 })

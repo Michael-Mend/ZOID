@@ -17,14 +17,17 @@ class Card extends Component {
            comment: '',
            username: user.displayName,
            postID: this.props.card._id,
-           res: []
+           res: [],
+           following: [],
+           commentCard: 'hidden',
+           commentSubmited: 'hidden',
+           commentName: 'hidden'
         }
     }
 
     componentDidMount() {
         axios.get('/api/comment/' + this.state.postID)
         .then(res => {
-            console.log(res.data)
             const data = res.data
             this.setState({
                 res: data
@@ -41,9 +44,15 @@ class Card extends Component {
 
     submitHandler = e => {
         e.preventDefault()
-        axios.post('/api/comment/', this.state)
+        axios.post('/api/comment', this.state)
         .then(res => {
-            console.log(res)
+            this.setState({
+                commentSubmited: 'commentSubmited',
+                newComment: this.state.comment,
+                commentCard: 'commentCard',
+                commentName: 'commentName',
+                comment: ''
+            })
         })
         .catch(err => {
             console.log(err)
@@ -73,7 +82,23 @@ class Card extends Component {
 
     follow = e => {
         e.preventDefault()
-        axios.update('/api/follow/', this.props.card.username)
+        this.setState({
+            following: this.props.card.username
+        })
+        axios.put('/api/follow/' + this.state.username, this.state)
+            .then(res => {
+                console.log(res)
+            })
+    }
+    save = e => {
+        e.preventDefault()
+        this.setState({
+            saved: this.props.card._id
+        })
+        axios.put('/api/save/' + this.state.username, this.state)
+            .then(res => {
+                console.log(res)
+            })
     }
     
     render() {
@@ -97,12 +122,7 @@ class Card extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='postLinks1'> 
-                            <a className='postLink1' href='/'>follow</a>
-                            <a className='postLink1' href='/'>share</a>
-                            <a className='postLink1' href='/'>save</a>
-                            <a className='postLink01' href='/'>report</a>
-                        </div>
+                        
                         <form className='newComment' onSubmit={this.submitHandler}>
                             <textarea 
                                 name='comment' 
@@ -110,16 +130,21 @@ class Card extends Component {
                                 placeholder='add a comment...'
                                 onChange={this.changeHandler}
                                 ></textarea>
-                            <button type="submit">submit comment</button>
+                            <button type="submit" className="submitCmnt">submit comment</button>
                         </form>
+                        <h2 id='commentSubmited' className={this.state.commentSubmited}>comment submited!</h2>
                         <h3>Comments</h3>
+                        <div className={this.state.commentCard}>
+                            <p className={this.state.commentName}>{this.state.username}</p>
+                            <p className={this.state.commentCard} >{this.state.newComment}</p>
+                        </div>
                         {res.map( comment => {
                             return <Comment key={comment._id} comment={comment}/>
                         })}
                     </div>
                 </div>
                 <div className='card'>
-                    <img title='reveal post' className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
+                    <img className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
                     <div> 
                         <div className='titleDiv'>
                             <h4 className='usrnm'> {this.props.card.username} </h4>
@@ -128,10 +153,9 @@ class Card extends Component {
                             <button className={this.props.dlt} onClick={this.delete}>delete</button>
                         </div>
                         <div className='postLinks'> 
-                            <a className='postLink' href='/'>follow</a>
-                            <a className='postLink' href='/'>share</a>
-                            <a className='postLink' href='/'>save</a>
-                            <a className='postLink0' href='/'>report</a>
+                            <button onClick={this.follow} className='postLink'>follow</button>
+                            <button onClick={this.save} className='postLink'>save</button>
+                            <button onClick={this.report} className='postLink0'>report</button>
                         </div>
                     </div>
                 </div>

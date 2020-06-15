@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import SearchBar from "./SearchBar";
 import Nav from "./Nav";
+import Tags from "./Tags";
 import Card from "./Card";
 import axios from 'axios';
 import Thumb from '../images/ph.png';
@@ -47,6 +48,7 @@ class UserPosts extends Component {
                     <p>{username}</p>
                     <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
                 </div>
+                <Tags />
                 <SearchBar />
                 <Nav />
                 {data.map( card => {

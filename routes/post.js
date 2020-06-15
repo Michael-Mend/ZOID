@@ -77,6 +77,16 @@ app.get('/edit/:id', (req, res) => {
         })
 })
 
+app.get('/search/:tag', (req, res) => {
+    Post.find({tag: req.params.tag})
+        .then(search => {
+            res.json(search);
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
 app.put('/edit/:id', (req, res) => {
     const conditions = {_id: req.params.id}
     console.log(req.body)
@@ -90,17 +100,39 @@ app.put('/edit/:id', (req, res) => {
         })
 })
 
-app.get('/search/:tag', (req, res) => {
-    Post.find({tag: req.params.tag})
-        .then(search => {
-            res.json(search);
+
+app.put('/follow/:username', (req, res) => {
+    const conditions = {username: req.params.username}
+    
+    console.log(req.body)
+
+    User.updateOne(conditions, {$push: {following: [req.body.following]}})
+        .then(post => {
+            if (!post) { return res.status(404).end(); }
+            return res.status(200).json(post)
         })
-        .catch(err => {
+        .catch( err => {
             res.json(err)
-        })
+        }) 
 })
 
-app.post('/user', (req,res) => {
+app.put('/save/:username', (req, res) => {
+    const conditions = {username: req.params.username}
+    
+    console.log(req.body)
+
+    User.updateOne(conditions, {$push: {saved: [req.body.saved]}})
+        .then(post => {
+            if (!post) { return res.status(404).end(); }
+            return res.status(200).json(post)
+        })
+        .catch( err => {
+            res.json(err)
+        }) 
+})
+
+app.post('/user/', (req,res) => {
+    console.log(req.body)
     User.create(req.body)
     .then(user => {
         console.log(user)
@@ -110,5 +142,6 @@ app.post('/user', (req,res) => {
         console.log(err)
     })
 })
+
 
 module.exports = app;
