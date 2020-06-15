@@ -9,7 +9,7 @@ import Thumb from '../images/ph.png';
 import firebase from 'firebase';
 import app from '../base';
 
-class Discover extends Component {
+class Saved extends Component {
     constructor(props) {
         const user = firebase.auth().currentUser;
         super(props)
@@ -23,20 +23,21 @@ class Discover extends Component {
             dlt: 'hidden',
             edit: 'hidden',
             user: user.displayName,
-            following: ''
+            saved: ''
         }
     }
 
     componentDidMount() {
-        axios.get('/api/following/' + this.state.user)
+        axios.get('/api/saved/' + this.state.user)
         .then(res => {
-            console.log(res.data[0].following)
+            console.log(res.data[0].saved)
             this.setState({
-                following: res.data[0].following
+                saved: res.data[0].saved
             })
-            console.log(this.state.following)
-            axios.get('/api/following%/'+ this.state.following)
+            console.log(this.state.saved)
+            axios.get('/api/saved%/'+ this.state.saved)
             .then(res => {
+                console.log(res)
                 this.setState({
                     data: res.data
                 })
@@ -68,4 +69,4 @@ class Discover extends Component {
     
 };
 
-export default Discover;
+export default Saved;

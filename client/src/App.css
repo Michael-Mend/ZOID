@@ -221,7 +221,9 @@ h1 {
 }
 .postLink:focus {
   outline: none;
-  
+}
+.postLink0:focus {
+  outline: none;
 }
 .postLink1 {
   padding-left: 9%;
@@ -594,6 +596,18 @@ h1 {
 }
 .commentSubmited {
   font-weight: 100;
+}
+h7 {
+  font-size: 15px;
+}
+h7 a{
+  margin-left: 5px;
+  margin-right: 5px;
+  color: rgb(85, 85, 85);
+  text-decoration: none;
+}
+h7 a:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 1800px) {

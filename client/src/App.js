@@ -10,6 +10,7 @@ import MyPosts from './components/UserPosts';
 import Search from './components/Search';
 import Profile from './components/Profile';
 import Edit from './components/Edit';
+import Saved from './components/Saved';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { AuthProvider } from './Auth';
 import PrivateRoute from './PrivateRoute';
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} /> 
             <PrivateRoute exact path="/discover" component={Discover} />
+            <PrivateRoute exact path="/saved" component={Saved} />
             <PrivateRoute exact path="/edit/:id" component={Edit} />
             <PrivateRoute exact path="/search/:tag" component={Search} />
             <PrivateRoute exact path="/profile/:username" component={Profile} />

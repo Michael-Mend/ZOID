@@ -2,6 +2,7 @@ const app = require("express").Router();
 const Post = require("../models/post");
 const Comment = require("../models/comment");
 const User = require("../models/user")
+const Report = require("../models/report")
 
 app.get('/posts', (req, res) => {
     Post.find({})
@@ -39,13 +40,21 @@ app.post('/comment', (req, res) =>{
     console.log(req.body)
     Comment.create(req.body)
     .then(post => {
-        console.log(post)
         res.json(post);
      })
     .catch(err => {
-        console.log(err)
+        res.json(err)
     })
-        
+})
+
+app.post('/report', (req, res) => {
+    Report.create(req.body)
+    .then(report => {
+        res.json(report);
+    })
+    .catch(err => {
+        res.json(err)
+    })
 })
 
 app.get('/comment/:id', (req, res) => {
@@ -75,6 +84,48 @@ app.get('/edit/:id', (req, res) => {
         .catch(err => {
             res.json(err)
         })
+})
+
+app.get('/following/:username', (req, res) => {
+    User.find({username: req.params.username})
+    .then(search => {
+        res.json(search);
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+app.get('/following%/:following', (req, res) => {
+    const userArray = req.params.following.split(',')
+    console.log(userArray)
+    Post.find({'username': {"$in": userArray}})
+    .then(search => {
+        res.json(search);
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+
+app.get('/saved/:username', (req, res) => {
+    User.find({username: req.params.username})
+    .then(search => {
+        res.json(search);
+    })
+    .catch(err => {
+        res.json(err)
+    })
+})
+app.get('/saved%/:id', (req, res) => {
+    const postArray = req.params.id.split(',')
+    console.log(postArray)
+    Post.find({'_id': {"$in": postArray}})
+    .then(search => {
+        res.json(search);
+    })
+    .catch(err => {
+        res.json(err)
+    })
 })
 
 app.get('/search/:tag', (req, res) => {

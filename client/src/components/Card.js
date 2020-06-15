@@ -18,10 +18,14 @@ class Card extends Component {
            username: user.displayName,
            postID: this.props.card._id,
            res: [],
-           following: [],
+           following: this.props.card.username,
            commentCard: 'hidden',
            commentSubmited: 'hidden',
-           commentName: 'hidden'
+           commentName: 'hidden',
+           saved: this.props.card._id,
+           report: 'report',
+           follow: 'follow',
+           save: 'save'
         }
     }
 
@@ -81,24 +85,38 @@ class Card extends Component {
     }
 
     follow = e => {
-        e.preventDefault()
         this.setState({
-            following: this.props.card.username
+            follow: 'followed'
         })
+        e.preventDefault()
         axios.put('/api/follow/' + this.state.username, this.state)
             .then(res => {
                 console.log(res)
             })
     }
     save = e => {
-        e.preventDefault()
         this.setState({
-            saved: this.props.card._id
+            save: 'saved'
         })
+        e.preventDefault()
         axios.put('/api/save/' + this.state.username, this.state)
             .then(res => {
                 console.log(res)
             })
+    }
+
+    report = e => {
+        this.setState({
+            report: 'reported'
+        })
+        e.preventDefault()
+        axios.post('/api/report/', this.state)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            }) 
     }
     
     render() {
@@ -153,9 +171,9 @@ class Card extends Component {
                             <button className={this.props.dlt} onClick={this.delete}>delete</button>
                         </div>
                         <div className='postLinks'> 
-                            <button onClick={this.follow} className='postLink'>follow</button>
-                            <button onClick={this.save} className='postLink'>save</button>
-                            <button onClick={this.report} className='postLink0'>report</button>
+                    <button onClick={this.follow} className='postLink'>{this.state.follow}</button>
+                            <button onClick={this.save} className='postLink'>{this.state.save}</button>
+                            <button onClick={this.report} className='postLink0'>{this.state.report}</button>
                         </div>
                     </div>
                 </div>

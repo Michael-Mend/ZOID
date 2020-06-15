@@ -18,7 +18,6 @@ const PostSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        minlength: 10,
         maxlength: 1000
     },
 
@@ -28,8 +27,9 @@ const PostSchema = new Schema({
     },
 
     image_link: {
+        required: true,
         type: String,
-        trim: true,
+        trim: true
     },
 
     file_link: {
