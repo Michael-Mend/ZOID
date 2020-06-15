@@ -87,6 +87,17 @@ app.get('/search/:tag', (req, res) => {
         })
 })
 
+app.get('/profile/:username', (req, res) => {
+    console.log(req.params.username)
+    Post.find({username: req.params.username})
+        .then(search => {
+            res.json(search);
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
 app.put('/edit/:id', (req, res) => {
     const conditions = {_id: req.params.id}
     console.log(req.body)

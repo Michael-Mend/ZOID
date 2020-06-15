@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import MyPosts from './components/UserPosts';
 import Search from './components/Search';
+import Profile from './components/Profile';
 import Edit from './components/Edit';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { AuthProvider } from './Auth';
@@ -21,12 +22,13 @@ class App extends Component {
             <Header />
             <PrivateRoute exact path="/" component={Home} />
             <PrivateRoute exact path="/myposts" component={MyPosts} />
-            <Route path="/New" component={New} /> 
+            <PrivateRoute exact path="/New" component={New} /> 
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} /> 
-            <Route path="/discover" component={Discover} />
-            <Route path="/edit/:id" component={Edit} />
-            <Route path="/search/:tag" component={Search} />
+            <PrivateRoute exact path="/discover" component={Discover} />
+            <PrivateRoute exact path="/edit/:id" component={Edit} />
+            <PrivateRoute exact path="/search/:tag" component={Search} />
+            <PrivateRoute exact path="/profile/:username" component={Profile} />
         </Router>
       </AuthProvider>
     );

@@ -117,8 +117,8 @@ class Card extends Component {
                             <div className='postBody'>
                                 <p>{this.props.card.description}</p>
                                 <div className='qLinks'>
-                                    <a href={this.props.card.image_link}>image link</a>
-                                    <a href={this.props.card.file_link}>download link</a>
+                                    <a href={this.props.card.image_link} target='_blank' rel="noopener noreferrer">image link</a>
+                                    <a href={this.props.card.file_link} target='_blank' rel="noopener noreferrer">file link</a>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +147,7 @@ class Card extends Component {
                     <img className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
                     <div> 
                         <div className='titleDiv'>
-                            <h4 className='usrnm'> {this.props.card.username} </h4>
+                            <Link to={'/profile/' + this.props.card.username} className='usrnm'> {this.props.card.username} </Link>
                             <h3 className='title'>{this.props.card.title}</h3>
                             <Link className={this.props.edit} to={"edit/" + this.state.postID} >edit</Link>
                             <button className={this.props.dlt} onClick={this.delete}>delete</button>
