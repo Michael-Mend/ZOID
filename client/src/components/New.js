@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
+import Tags from "./Tags";
 import SearchBar from "./SearchBar";
 import "../App.css";
 import axios from 'axios';
 import firebase from 'firebase';
+import app from '../base';
 
 class New extends Component {
     constructor(props) {
@@ -41,9 +43,14 @@ class New extends Component {
     }
 
     render() {
-        const { title, description, image_link, file_link, tag } = this.state
+        const { title, description, image_link, file_link, tag, username } = this.state
         return(
             <div>
+                <div className='userDiv'>
+                    <p>{username}</p>
+                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
+                </div>
+                <Tags />
                 <SearchBar />
                 <Nav />
                 <div className="newPost">
@@ -61,13 +68,17 @@ class New extends Component {
                         <p>tag</p>
                         <div>
                             <input
+                                placeholder="optional"
                                 type="text" 
                                 name="tag" 
                                 value={tag}
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <p>image link</p>
+                        <div>
+                            <p>image link</p>
+                            
+                        </div>
                         <div>
                             <input
                                 placeholder="must be a direct image link"
@@ -77,9 +88,15 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
+                        <h7>we recommend using
+                                <a href='https://imgur.com' target='_blank' rel="noopener noreferrer">
+                                    imgur
+                                </a> 
+                            to host your image</h7> 
                         <p>file link</p>
                         <div>
                             <input
+                                placeholder="optional"
                                 type="text" 
                                 name="file_link"
                                 value={file_link}

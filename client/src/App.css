@@ -221,7 +221,9 @@ h1 {
 }
 .postLink:focus {
   outline: none;
-  
+}
+.postLink0:focus {
+  outline: none;
 }
 .postLink1 {
   padding-left: 9%;
@@ -249,12 +251,6 @@ h1 {
 .titleDiv {
   display: flex;
 }
-.titleDiv h4 {
-  font-weight: 100;
-  color: rgb(220, 220, 220);
-  font-family: 'Roboto';
-  margin-left: 20px;
-}
 .hidden {
   display: none;
 }
@@ -278,6 +274,14 @@ h1 {
 }
 .expand button:focus {
   outline: none;
+}
+.usrnm {
+  font-weight: 100;
+  color: rgb(220, 220, 220);
+  font-family: 'Roboto';
+  margin-left: 20px;
+  text-decoration: none;
+  margin-top: 21px;
 }
 .usrnm:hover {
   text-decoration: underline;
@@ -577,6 +581,34 @@ h1 {
 .userDiv button {
   font-size: 14px;
 }
+.tagsDiv {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin-top: 130px;
+  text-align: center;
+}
+.submitCmnt:focus {
+  background-color: rgb(220,220,220);
+}
+.commentSubmited {
+  font-weight: 100;
+}
+h7 {
+  font-size: 15px;
+}
+h7 a{
+  margin-left: 5px;
+  margin-right: 5px;
+  color: rgb(85, 85, 85);
+  text-decoration: none;
+}
+h7 a:hover {
+  text-decoration: underline;
+}
 
 @media only screen and (max-width: 1800px) {
   .expanded {
@@ -588,21 +620,30 @@ h1 {
     width: 2500%;
   }
 }
-
-.tagsDiv {
-  height: 100%;
-  width: 20%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  margin-top: 130px;
-  text-align: center;
-}
-
-.submitCmnt:focus {
-  background-color: rgb(220,220,220);
-}
-.commentSubmited {
-  font-weight: 100;
+@media only screen and (max-width: 1400px) {
+  .head {
+    display: none;
+  }
+  .tagsDiv {
+    display: none;
+  }
+  .userDiv {
+    display: none;
+  }
+  .card {
+    margin-left: 10%;
+  }
+  .expand {
+    margin-left: 2%;
+  }
+  .searchbar {
+    margin-top: 2%;
+  }
+  .searchBtn {
+    margin-left: 2%;
+  }
+  .tabs {
+    margin-left: 2%;
+    margin-top: 2%;
+  }
 }

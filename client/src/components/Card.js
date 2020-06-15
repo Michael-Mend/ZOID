@@ -18,10 +18,14 @@ class Card extends Component {
            username: user.displayName,
            postID: this.props.card._id,
            res: [],
-           following: [],
+           following: this.props.card.username,
            commentCard: 'hidden',
            commentSubmited: 'hidden',
-           commentName: 'hidden'
+           commentName: 'hidden',
+           saved: this.props.card._id,
+           report: 'report',
+           follow: 'follow',
+           save: 'save'
         }
     }
 
@@ -81,24 +85,38 @@ class Card extends Component {
     }
 
     follow = e => {
-        e.preventDefault()
         this.setState({
-            following: this.props.card.username
+            follow: 'followed'
         })
+        e.preventDefault()
         axios.put('/api/follow/' + this.state.username, this.state)
             .then(res => {
                 console.log(res)
             })
     }
     save = e => {
-        e.preventDefault()
         this.setState({
-            saved: this.props.card._id
+            save: 'saved'
         })
+        e.preventDefault()
         axios.put('/api/save/' + this.state.username, this.state)
             .then(res => {
                 console.log(res)
             })
+    }
+
+    report = e => {
+        this.setState({
+            report: 'reported'
+        })
+        e.preventDefault()
+        axios.post('/api/report/', this.state)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            }) 
     }
     
     render() {
@@ -117,8 +135,8 @@ class Card extends Component {
                             <div className='postBody'>
                                 <p>{this.props.card.description}</p>
                                 <div className='qLinks'>
-                                    <a href={this.props.card.image_link}>image link</a>
-                                    <a href={this.props.card.file_link}>download link</a>
+                                    <a href={this.props.card.image_link} target='_blank' rel="noopener noreferrer">image link</a>
+                                    <a href={this.props.card.file_link} target='_blank' rel="noopener noreferrer">file link</a>
                                 </div>
                             </div>
                         </div>
@@ -147,15 +165,15 @@ class Card extends Component {
                     <img className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
                     <div> 
                         <div className='titleDiv'>
-                            <h4 className='usrnm'> {this.props.card.username} </h4>
+                            <Link to={'/profile/' + this.props.card.username} className='usrnm'> {this.props.card.username} </Link>
                             <h3 className='title'>{this.props.card.title}</h3>
                             <Link className={this.props.edit} to={"edit/" + this.state.postID} >edit</Link>
                             <button className={this.props.dlt} onClick={this.delete}>delete</button>
                         </div>
                         <div className='postLinks'> 
-                            <button onClick={this.follow} className='postLink'>follow</button>
-                            <button onClick={this.save} className='postLink'>save</button>
-                            <button onClick={this.report} className='postLink0'>report</button>
+                    <button onClick={this.follow} className='postLink'>{this.state.follow}</button>
+                            <button onClick={this.save} className='postLink'>{this.state.save}</button>
+                            <button onClick={this.report} className='postLink0'>{this.state.report}</button>
                         </div>
                     </div>
                 </div>

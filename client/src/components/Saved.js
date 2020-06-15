@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import "../App.css";
 import SearchBar from "./SearchBar";
 import Nav from "./Nav";
+import Tags from "./Tags";
 import Card from "./Card";
-import app from '../base';
+import axios from 'axios';
 import Thumb from '../images/ph.png';
 import firebase from 'firebase';
-import axios from "axios";
-import Tags from "./Tags";
+import app from '../base';
 
-class Search extends Component {
+class Saved extends Component {
     constructor(props) {
+        const user = firebase.auth().currentUser;
         super(props)
-        const user = firebase.auth().currentUser.displayName;
         this.state = {
             title: '',
             description: '',
@@ -22,21 +22,31 @@ class Search extends Component {
             data: [],
             dlt: 'hidden',
             edit: 'hidden',
-            user: user
+            user: user.displayName,
+            saved: ''
         }
     }
 
     componentDidMount() {
-        const { tag } = this.props.match.params
-        console.log(tag)
-        axios.get('/api/search/' + tag)
-            .then(res => {
-            const data = res.data
-            console.log(data)
+        axios.get('/api/saved/' + this.state.user)
+        .then(res => {
+            console.log(res.data[0].saved)
             this.setState({
-                data: data
+                saved: res.data[0].saved
+            })
+            console.log(this.state.saved)
+            axios.get('/api/saved%/'+ this.state.saved)
+            .then(res => {
+                console.log(res)
+                this.setState({
+                    data: res.data
+                })
             })
         })
+        .catch(err => {
+            console.log(err)
+        })
+        
     }
 
     render() {
@@ -59,4 +69,4 @@ class Search extends Component {
     
 };
 
-export default Search;
+export default Saved;

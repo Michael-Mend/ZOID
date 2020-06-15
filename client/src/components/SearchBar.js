@@ -17,11 +17,18 @@ class SearchBar extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
+    handleKeyDown = e => {
+        if (e.key === 'Enter') {
+            console.log(this.state.search)
+        }
+    }
+
     render() {
         return (
             <div className="searchbar">
-                <Link className="searchBtn" to={"/search/" + this.state.search}><img className='srchImg' src={Img}/></Link>
+                <Link className="searchBtn" to={"/search/" + this.state.search}><img alt='' className='srchImg' src={Img}/></Link>
                 <input 
+                    onKeyDown={this.handleKeyDown}
                     type="text" 
                     placeholder="search" 
                     className="search" 

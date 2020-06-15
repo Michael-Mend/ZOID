@@ -27,9 +27,9 @@ class Search extends Component {
     }
 
     componentDidMount() {
-        const { tag } = this.props.match.params
-        console.log(tag)
-        axios.get('/api/search/' + tag)
+        const { username } = this.props.match.params
+        console.log(username)
+        axios.get('/api/profile/' + username)
             .then(res => {
             const data = res.data
             console.log(data)
