@@ -3,15 +3,14 @@ import "../App.css";
 import SearchBar from "./SearchBar";
 import Nav from "./Nav";
 import Card from "./Card";
-import axios from 'axios';
-import Thumb from '../images/ph.png';
 import app from '../base';
+import Thumb from '../images/ph.png';
 import firebase from 'firebase';
-import Tags from "./Tags";
+import axios from "axios";
 
-class Home extends Component {
+class Search extends Component {
     constructor(props) {
-        super(props) 
+        super(props)
         const user = firebase.auth().currentUser.displayName;
         this.state = {
             title: '',
@@ -27,18 +26,18 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/posts')
-        .then(res => {
-          const data = res.data
-          this.setState({
-              data: data
-          })
+        const { tag } = this.props.match.params
+        console.log(tag)
+        axios.get('/api/search/' + tag)
+            .then(res => {
+            const data = res.data
+            console.log(data)
+            this.setState({
+                data: data
+            })
         })
-        .catch(err => {
-          console.log(err)
-        })
-    }   
-    
+    }
+
     render() {
         const { data, dlt, edit, user } = this.state
         return (
@@ -47,7 +46,6 @@ class Home extends Component {
                     <p>{user}</p>
                     <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
                 </div>
-                <Tags />
                 <SearchBar />
                 <Nav />
                 {data.map( card => {
@@ -56,6 +54,7 @@ class Home extends Component {
             </div>
         )
     }
+    
 };
 
-export default Home;
+export default Search;

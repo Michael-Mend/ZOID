@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import '../App.css';
 import New from '../images/new.png'
 import { Link } from "react-router-dom";
-import axios from "axios";
+import Img from '../images/srch.png';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -17,13 +17,10 @@ class SearchBar extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    submitHandler = e => {
-        
-    }
-
     render() {
         return (
             <div className="searchbar">
+                <Link className="searchBtn" to={"/search/" + this.state.search}><img className='srchImg' src={Img}/></Link>
                 <input 
                     type="text" 
                     placeholder="search" 

@@ -44,12 +44,12 @@ class New extends Component {
     submitHandler = e => {
         e.preventDefault()
         axios.put('/api/edit/' + this.state._id, this.state)
-        .then(res => {
-            console.log(res)
-        })
-        .then(
-            window.location.replace('/')
-        )
+            .then(res => {
+                console.log(res)
+            })
+            .then(
+                window.location.replace('/')
+            )
     }
 
     render() {
