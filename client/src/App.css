@@ -274,6 +274,9 @@ h1 {
   margin-left: 21%;
   position: absolute;
 }
+#expandIcon{
+  visibility: hidden;
+}
 .expand button img {
   height: 30px;
   width: 30px;
@@ -552,13 +555,16 @@ h1 {
   color: black;
 }
 
+#logoSignIn{
+  visibility: hidden;
+}
 .signUpForm {
   background-color: rgb(155, 155, 155);
   margin-left: 22%;
   margin-right: 15%;
   border-radius: 10px;
   padding-bottom: 30px;
-  margin-top:7%;
+  margin-top:1%;
 }
 .signUpForm * {
   margin-left: 3%;
@@ -567,15 +573,22 @@ h1 {
   padding-top: 40px;
 }
 .passwordInput {
-  margin-bottom: 20px;
+  font-family: 'Noto Sans SC', sans-serif;
+  color: black;
+  background-color: rgb(200, 200, 200);
+  width: 40%;
+  line-height: 20px;
+  height: 35px;
+  font-size: 20px;
   border-top: none;
   border-left: none;
+  border-color: rgb(116, 116, 116);
   border-right: none;
   border-bottom: solid;
-  border-width: 5px;
+  border-width: 3px;
   border-color: black;
-  background-color: transparent;
-  background-color: #747474;
+  
+  outline: none;;
 }
 
 .signUpForm button {
@@ -720,9 +733,7 @@ h7 a{
   color: rgb(85, 85, 85);
   text-decoration: none;
 }
-h7 a:hover {
-  text-decoration: underline;
-}
+
 
 @media only screen and (max-width: 1800px) {
   .expanded {
@@ -735,6 +746,10 @@ h7 a:hover {
   }
 }
 @media only screen and (max-width: 1400px) {
+  body{
+    position: absolute;
+    background-color:white; 
+  }
   .head {
     display: none;
   }
@@ -742,13 +757,23 @@ h7 a:hover {
     display: none;
   }
   .userDiv {
-    display: none;
+    /* display: none; */
   }
   .card {
     margin-left: 10%;
+    position: relative;
+    right: 0;
+    width: 90vw;
+    margin-left: 10px;
+    padding-left: 0;
   }
   .expand {
-    margin-left: 2%;
+    position: ABSOLUTE;
+    left: 0;
+    visibility: hidden;
+    padding-right: 0;
+    margin-right: 0; 
+    border-right: 0;
   }
   .searchbar {
     margin-top: 2%;
@@ -760,4 +785,59 @@ h7 a:hover {
     margin-left: 2%;
     margin-top: 2%;
   }
+
+  .signUpForm {
+    padding-bottom: 0;
+    position: relative;
+    width: 350px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 35px;
+    background-color: white;  
+  }
+
+  .signUpForm input {
+    font-family: 'Noto Sans SC', sans-serif;
+  color: black;
+  background-color: white;  
+  width: 20rem;
+  line-height: 20px;
+  height: 35px;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-color: rgb(116, 116, 116);
+  border-right: none;
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: black;
+  background-color: transparent;
+  outline: none;
+  }
+  #logoSignIn{
+    visibility: visible;
+    margin-bottom: 0;
+  }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }

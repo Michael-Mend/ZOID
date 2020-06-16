@@ -43,9 +43,10 @@ class Search extends Component {
         const { data, dlt, edit, user } = this.state
         return (
             <div>
-                <div className='userDiv'>
+               <div className='userDiv'>
+                <button className='signout' onClick={() => app.auth().signOut()}><i id="signOut" class="large material-icons">arrow_back</i></button>
                     <p>{user}</p>
-                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
+                    
                 </div>
                 <Tags />
                 <SearchBar />

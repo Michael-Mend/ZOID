@@ -4,6 +4,7 @@ import { withRouter, Redirect } from 'react-router';
 import app from '../base.js';
 import { AuthContext } from '../Auth.js';
 import { Link } from "react-router-dom";
+import  Logo  from "../images/logo.png"
 
 const Login = ({ history }) => {
     
@@ -31,6 +32,7 @@ const Login = ({ history }) => {
 
     return (
         <div>
+            <img id="logoSignIn" className="logo" src={Logo} alt=''/>
             <form onSubmit={handleLogin} className="signUpForm">
                 <p className="usernameLabel">Email</p>
                 <input name='email'type="email" id='username'></input>

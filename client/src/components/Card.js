@@ -124,7 +124,8 @@ class Card extends Component {
         return (
             <div className='cardMain'>
                 <div className='expand'>
-                    <button onClick={this.expand}><img  src={expand} alt=''/></button>
+                    {/* moved button to pic for mobile query */}
+                    <button id="expandIcon"onClick={this.expand}><img  src={expand} alt=''/></button>
                     <div className={this.state.class}>
                         <div>
                             <button onClick={this.close}><i id="editBtn"class="large material-icons">close</i></button>
@@ -167,7 +168,7 @@ class Card extends Component {
                     </div>
                 </div>
                 <div className='card'>
-                    <img className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
+                    <img onClick={this.expand} className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
                     <div> 
                         <div className='titleDiv'>
                             <Link id="us"to={'/profile/' + this.props.card.username} className='usrnm'> {this.props.card.username} </Link>
