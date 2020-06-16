@@ -127,7 +127,7 @@ class Card extends Component {
                     <button onClick={this.expand}><img  src={expand} alt=''/></button>
                     <div className={this.state.class}>
                         <div>
-                            <button onClick={this.close}>close</button>
+                            <button onClick={this.close}><i id="editBtn"class="large material-icons">close</i></button>
                             <h3 className='title0'>{this.props.card.title}</h3>
                         </div>
                         <div>
@@ -165,10 +165,10 @@ class Card extends Component {
                     <img className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
                     <div> 
                         <div className='titleDiv'>
-                            <Link to={'/profile/' + this.props.card.username} className='usrnm'> {this.props.card.username} </Link>
+                            <Link id="us"to={'/profile/' + this.props.card.username} className='usrnm'> {this.props.card.username} </Link>
                             <h3 className='title'>{this.props.card.title}</h3>
-                            <Link className={this.props.edit} to={"edit/" + this.state.postID} >edit</Link>
-                            <button className={this.props.dlt} onClick={this.delete}>delete</button>
+                            <Link className={this.props.edit} to={"edit/" + this.state.postID} ><i id="editBtn"class="large material-icons">edit</i></Link>
+                            <button id="delete" className={this.props.dlt} onClick={this.delete}><i class="large material-icons">delete_forever</i></button>
                         </div>
                         <div className='postLinks'> 
                     <button onClick={this.follow} className='postLink'>{this.state.follow}</button>
