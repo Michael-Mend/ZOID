@@ -756,16 +756,16 @@ h7 a{
   .tagsDiv {
     display: none;
   }
-  .userDiv {
-    /* display: none; */
-  }
+
   .card {
     margin-left: 10%;
     position: relative;
     right: 0;
-    width: 90vw;
+    width: 88vw;
     margin-left: 10px;
     padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
   }
   .expand {
     position: ABSOLUTE;
@@ -800,7 +800,7 @@ h7 a{
     font-family: 'Noto Sans SC', sans-serif;
   color: black;
   background-color: white;  
-  width: 20rem;
+  width: 19rem;
   line-height: 20px;
   height: 35px;
   font-size: 20px;
@@ -817,6 +817,74 @@ h7 a{
   #logoSignIn{
     visibility: visible;
     margin-bottom: 0;
+  }
+
+  .title {
+    margin-left: 1rem;
+    margin-top:16px;
+    color: black;
+    font-size: 1rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 100;
+    text-decoration: underline;
+  }
+  .postLink{
+    padding: 0;
+    margin-right: 15px;
+    margin-left: 5px; 
+  }
+  .postLink0{
+    padding: 0;
+    margin-left: 5px; 
+  }
+ 
+  .userDiv{
+    position: relative;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .userDiv p {
+    color:black; 
+    margin-left: 0;
+    margin-top: 18px;
+  }
+
+  .searchbar{
+    margin: 0;
+    padding: 0;
+    width:21rem;
+  }
+
+  .tabs{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+  }
+
+  .tabs a {
+    font-size: 12px;
+  }
+
+  .new{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+  }
+  .expanded {
+    background-color: #747474;
+    color: #6a6a6a;
+    font-family: "Noto Sans SC",sans-serif;
+    width: 90vw;
+    left: 15%;
+    padding: 0;
+    margin: 0;
+    position: absolute;  
+    border: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    z-index: 3;
+    /* text-shadow: white 3px 0px 0px, white 2.83487px 0.981584px 0px, white 2.35766px 1.85511px 0px, white 1.62091px 2.52441px 0px, white 0.705713px 2.91581px 0px, white -0.287171px 2.98622px 0px, white -1.24844px 2.72789px 0px, white -2.07227px 2.16926px 0px, white -2.66798px 1.37182px 0px, white -2.96998px 0.42336px 0px, white -2.94502px -0.571704px 0px, white -2.59586px -1.50383px 0px, white -1.96093px -2.27041px 0px, white -1.11013px -2.78704px 0px, white -0.137119px -2.99686px 0px, white 0.850987px -2.87677px 0px, white 1.74541px -2.43999px 0px, white 2.44769px -1.73459px 0px, white 2.88051px -0.838247px 0px; */
   }
  
 

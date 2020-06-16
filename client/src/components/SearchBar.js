@@ -30,7 +30,7 @@ class SearchBar extends Component {
                 <input 
                     onKeyDown={this.handleKeyDown}
                     type="text" 
-                    placeholder="search" 
+                    placeholder="Search by tag.." 
                     className="search" 
                     name="search" 
                     onChange={this.changeHandler}
