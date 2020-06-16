@@ -128,33 +128,38 @@ class Card extends Component {
                     <div className={this.state.class}>
                         <div>
                             <button onClick={this.close}><i id="editBtn"class="large material-icons">close</i></button>
-                            <h3 className='title0'>{this.props.card.title}</h3>
+                            <p id="title">Post Title:</p>
+                            <p className='title0'> {this.props.card.title}</p>
                         </div>
                         <div>
                             <img alt={this.props.card.title} src={this.props.card.image_link}/>
                             <div className='postBody'>
-                                <p>{this.props.card.description}</p>
+                                
+                            <p id="desc">Description:</p>
+                                <p> {this.props.card.description}</p>
                                 <div className='qLinks'>
-                                    <a href={this.props.card.image_link} target='_blank' rel="noopener noreferrer">image link</a>
-                                    <a href={this.props.card.file_link} target='_blank' rel="noopener noreferrer">file link</a>
+                                    <a href={this.props.card.image_link} target='_blank' rel="noopener noreferrer"><i id="link" class="material-icons">link</i></a>
+                                    {/* <a href={this.props.card.file_link} target='_blank' rel="noopener noreferrer">File Link</a> */}
+                                    
                                 </div>
                             </div>
                         </div>
                         
                         <form className='newComment' onSubmit={this.submitHandler}>
-                            <textarea 
+                            <input 
                                 name='comment' 
                                 value={comment} 
-                                placeholder='add a comment...'
+                                placeholder='Add a comment...'
                                 onChange={this.changeHandler}
-                                ></textarea>
-                            <button type="submit" className="submitCmnt">submit comment</button>
+                                ></input>
+                            <button type="submit" className="submitCmnt"><i id="link" class="material-icons">chat</i></button>
                         </form>
-                        <h2 id='commentSubmited' className={this.state.commentSubmited}>comment submited!</h2>
-                        <h3>Comments</h3>
+                        <h2 id='commentSubmited' className={this.state.commentSubmited}>Comment Submited!</h2>
+                       {/* <h3><i id="link" class="material-icons">chat</i></h3> */}
                         <div className={this.state.commentCard}>
-                            <p className={this.state.commentName}>{this.state.username}</p>
-                            <p className={this.state.commentCard} >{this.state.newComment}</p>
+                            <p className={this.state.commentName}>{this.state.username}</p> 
+                            <p className={this.state.commentCard}>{this.state.newComment}</p>
+                            
                         </div>
                         {res.map( comment => {
                             return <Comment key={comment._id} comment={comment}/>
@@ -166,7 +171,7 @@ class Card extends Component {
                     <div> 
                         <div className='titleDiv'>
                             <Link id="us"to={'/profile/' + this.props.card.username} className='usrnm'> {this.props.card.username} </Link>
-                            <h3 className='title'>{this.props.card.title}</h3>
+                            <h3 className='title'> {this.props.card.title}</h3>
                             <Link className={this.props.edit} to={"edit/" + this.state.postID} ><i id="editBtn"class="large material-icons">edit</i></Link>
                             <button id="delete" className={this.props.dlt} onClick={this.delete}><i class="large material-icons">delete_forever</i></button>
                         </div>

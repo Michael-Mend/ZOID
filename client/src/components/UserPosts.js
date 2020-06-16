@@ -45,8 +45,8 @@ class UserPosts extends Component {
         return (
             <div>
                 <div className='userDiv'>
+                <button className='signout' onClick={() => app.auth().signOut()}><i id="signOut" class="large material-icons">arrow_back</i></button>
                     <p>{username}</p>
-                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
                 </div>
                 <Tags />
                 <SearchBar />

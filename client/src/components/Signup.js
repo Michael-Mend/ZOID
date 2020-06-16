@@ -38,18 +38,18 @@ const Signup = ({ history }) => {
     return (
         <div>
             <form onSubmit={handleSignUp} className="signUpForm">
-                <p className="usernameLabel">username</p>
+                <p className="usernameLabel">Username</p>
                 <input name='displayName' id='username' type='text'></input>
-                <p>email</p>
+                <p>Email</p>
                 <input name='email' id='email' type="email"></input>
-                <p>password</p>
+                <p>Password</p>
                 <input name='password' id='password' type="password"></input>
-                <p>repeat password</p>
+                <p>Repeat Password</p>
                 <input className="passwordInput" type="password"></input>
-                <button type='submit' id='signup'>sign up</button>
+                <button type='submit' id='signup'>Sign Up</button>
                 <div className='l1'>
-                    <h4>Already have an account?</h4>
-                    <Link to='/login'>login</Link>
+                    <h4 id="message">Already have an account?</h4>
+                    <Link id="logSign"to='/login'>Login!</Link>
                 </div>
             </form>
         </div>

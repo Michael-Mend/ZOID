@@ -32,14 +32,14 @@ const Login = ({ history }) => {
     return (
         <div>
             <form onSubmit={handleLogin} className="signUpForm">
-                <p className="usernameLabel">email</p>
-                <input name='email' id='username' type="email"></input>
-                <p>password</p>
+                <p className="usernameLabel">Email</p>
+                <input name='email'type="email" id='username'></input>
+                <p>Password</p>
                 <input name='password' id='password' className="passwordInput" type="password"></input>
-                <button type='submit' className='login'>login</button>
+                <button type='submit' className='login'>Login</button>
                 <div className='l1'>
-                    <h4>dont have an account?</h4>
-                    <Link to='/signup'>signup</Link>
+                    <h4 id="message">Dont have an account?</h4>
+                    <Link id="logSign"to='/signup'>Signup!</Link>
                 </div>
             </form>
         </div>

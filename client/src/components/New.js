@@ -47,17 +47,17 @@ class New extends Component {
         return(
             <div>
                 <div className='userDiv'>
+                <button className='signout' onClick={() => app.auth().signOut()}><i id="signOut" class="large material-icons">arrow_back</i></button>
                     <p>{username}</p>
-                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
                 </div>
                 <Tags />
                 <SearchBar />
                 <Nav />
                 <div className="newPost">
-                    <h3>submit a post</h3>
+                    <h3>Submit a post</h3>
                     <form onSubmit={this.submitHandler}>
-                        <p>title</p>
-                        <div>
+                        <p>Title</p>
+                        <div id="newPostInput">
                             <input 
                                 type="text" 
                                 name="title" 
@@ -65,7 +65,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <p>tag</p>
+                        <p>Tag</p>
                         <div>
                             <input
                                 placeholder="optional"
@@ -76,7 +76,7 @@ class New extends Component {
                             />
                         </div>
                         <div>
-                            <p>image link</p>
+                            <p>Image Link</p>
                             
                         </div>
                         <div>
@@ -88,12 +88,12 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <h7>we recommend using
+                        <h7>We recommend using, 
                                 <a href='https://imgur.com' target='_blank' rel="noopener noreferrer">
                                     imgur
                                 </a> 
-                            to host your image</h7> 
-                        <p>file link</p>
+                            to host your image!</h7> 
+                        <p>File Link</p>
                         <div>
                             <input
                                 placeholder="optional"
@@ -103,7 +103,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <p>description</p>
+                        <p>Description</p>
                         <div>
                             <textarea
                                 type="text" 
@@ -112,7 +112,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <button type="submit">submit</button>
+                        <button type="submit">Submit</button>
                     </form>
                 </div>
             </div>
