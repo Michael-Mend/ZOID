@@ -128,7 +128,7 @@ class Card extends Component {
                     <button id="expandIcon"onClick={this.expand}><img  src={expand} alt=''/></button>
                     <div className={this.state.class}>
                         <div>
-                            <button onClick={this.close}><i id="editBtn"class="large material-icons">close</i></button>
+                            <button onClick={this.close}><i id="closeBtn"class="large material-icons">close</i></button>
                             <p id="title">Post Title:</p>
                             <p className='title0'> {this.props.card.title}</p>
                         </div>

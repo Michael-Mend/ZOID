@@ -579,8 +579,7 @@ h1 {
   border-bottom: solid;
   border-width: 3px;
   border-color: black;
-  
-  outline: none;;
+  outline: none;
 }
 
 .signUpForm button {
@@ -775,14 +774,14 @@ h7 a{
     padding-right: 0;
     background-color:#90a4ae ;
   }
-  .expand {
+  /* .expand {
     position: ABSOLUTE;
     left: 0;
     visibility: hidden;
     padding-right: 0;
     margin-right: 0; 
     border-right: 0;
-  }
+  } */
   .searchbar {
     margin-top: 2%;
   }
@@ -798,16 +797,14 @@ h7 a{
     padding-bottom: 0;
     position: relative;
     width: 350px;
-    height: 400px;
-    margin-top: 50px;
-    margin-left: 35px;
-    background-color: white;  
+    height: 600px;
+    margin-top: 55px;
+    margin-left: 30px;
+    background-color:#90a4ae ;
   }
 
   .signUpForm input {
-    font-family: 'Noto Sans SC', sans-serif;
-  color: black;
-  background-color: white;  
+  font-family: 'Noto Sans SC', sans-serif; 
   width: 19rem;
   line-height: 20px;
   height: 35px;
@@ -818,7 +815,6 @@ h7 a{
   border-right: none;
   border-bottom: solid;
   border-width: 3px;
-  border-color: black;
   background-color: transparent;
   outline: none;
   }
@@ -886,19 +882,74 @@ h7 a{
     margin-top: 0;
   }
   .expanded {
-    background-color: black;
+    background-color:#90a4ae ;
     color: #6a6a6a;
     font-family: "Noto Sans SC",sans-serif;
-    width: 50px;
+    width: 300px;
     left: 15%;
     padding: 0;
-    margin: 0;
     position: absolute;  
     border: solid;
     border-radius: 10px;
     border-width: 1px;
     z-index: 3;
-    
+  }
+  .expanded input {
+    color: black;
+    border-radius: 10px;
+    border: solid;
+    border-width: 3px;
+    border-color: rgb(116, 116, 116);
+    background-color: transparent;
+    width: 250px;
+  }
+  .expanded button{
+    background-color: transparent;
+  }
+  .expanded button:hover{
+    color:black ;
+  }
+  .commentCard{
+    border-radius: 10px;
+    border: solid;
+    border-width: 3px;
+    border-color: rgb(116, 116, 116);
+    background-color: transparent;
+    width: 275px;
+    margin-left: 10px;
+  }
+  .commentName{
+    font-size: 3px;
+  }
+  #link{
+    font-size: 2rem;
+  }
+  #closeBtn{
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
+  #closeBtn:focus{
+    outline: none;
+  }
+  #title, #desc {
+    visibility: hidden;
+  }
+  .title0, #descBox{
+    position: absolute;
+    margin-left: 10px;
+  }
+  #descBox{
+    font-size: 15px;
+    margin-left: 0;
+  }
+  .expanded img {
+    width: 30vw;
+    height: auto;
+    margin-left: 25px;
+  }
+  .expanded p {
+    font-size: 10px;
   }
 
   .delete {
@@ -934,10 +985,10 @@ h7 a{
     left: 50px;
     margin:0 ;
     padding-bottom: 0;
-    background-color: transparent;
+    background-color:#90a4ae ;
     border: solid;
     border-width: 5px;
-    border-color: rgb(106, 106, 106);
+    border-color: #90a4ae
 
   }
   #editPostIcon{
