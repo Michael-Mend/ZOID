@@ -59,9 +59,9 @@ class New extends Component {
                 <SearchBar />
                 <Nav />
                 <div className="newPost">
-                    <h3>edit your post</h3>
+                    <h3>Edit your post<i id="editPostIcon"class="large material-icons">edit</i></h3>
                     <form onSubmit={this.submitHandler}>
-                        <p>title</p>
+                        <p>Title:</p>
                         <div>
                             <input 
                                 type="text" 
@@ -70,7 +70,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             ></input>
                         </div>
-                        <p>tag</p>
+                        <p>Tag:</p>
                         <div>
                             <input
                                 type="text" 
@@ -79,7 +79,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <p>image link</p>
+                        <p>Image Link:</p>
                         <div>
                             <input
                                 placeholder="must be a direct image link"
@@ -89,7 +89,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <p>file link</p>
+                        <p>File Link:</p>
                         <div>
                             <input
                                 type="text" 
@@ -98,7 +98,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <p>description</p>
+                        <p>Description:</p>
                         <div>
                             <textarea
                                 type="text" 
@@ -107,7 +107,7 @@ class New extends Component {
                                 onChange={this.changeHandler}
                             />
                         </div>
-                        <button type="submit">submit</button>
+                        <button type="submit"><i id="submitEditBtn"class="large material-icons">done</i></button>
                     </form>
                 </div>
             </div>

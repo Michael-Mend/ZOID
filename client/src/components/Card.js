@@ -23,9 +23,9 @@ class Card extends Component {
            commentSubmited: 'hidden',
            commentName: 'hidden',
            saved: this.props.card._id,
-           report: 'report',
-           follow: 'follow',
-           save: 'save'
+           report: 'Report',
+           follow: 'Follow',
+           save: 'Save'
         }
     }
 
@@ -137,7 +137,7 @@ class Card extends Component {
                             <div className='postBody'>
                                 
                             <p id="desc">Description:</p>
-                                <p> {this.props.card.description}</p>
+                                <p id="descBox"> {this.props.card.description}</p>
                                 <div className='qLinks'>
                                     <a href={this.props.card.image_link} target='_blank' rel="noopener noreferrer"><i id="link" class="material-icons">link</i></a>
                                     {/* <a href={this.props.card.file_link} target='_blank' rel="noopener noreferrer">File Link</a> */}

@@ -180,7 +180,7 @@ h1 {
   border-right: none;
   border-width: 1px;
   color: rgb(85, 85, 85);
-  background-color: rgb(116, 116, 116);
+  background-color: rgb(155, 155, 155);
   margin-left: 25%;
   margin-right: 8%;
   display: flex;
@@ -220,10 +220,8 @@ h1 {
   padding-right:6%;
   color: black;
   text-decoration: none;
-  
   background-color: transparent;
-  font-family: "Sigmar One", cursive;
-  /* text-shadow: white 3px 0px 0px, white 2.83487px 0.981584px 0px, white 2.35766px 1.85511px 0px, white 1.62091px 2.52441px 0px, white 0.705713px 2.91581px 0px, white -0.287171px 2.98622px 0px, white -1.24844px 2.72789px 0px, white -2.07227px 2.16926px 0px, white -2.66798px 1.37182px 0px, white -2.96998px 0.42336px 0px, white -2.94502px -0.571704px 0px, white -2.59586px -1.50383px 0px, white -1.96093px -2.27041px 0px, white -1.11013px -2.78704px 0px, white -0.137119px -2.99686px 0px, white 0.850987px -2.87677px 0px, white 1.74541px -2.43999px 0px, white 2.44769px -1.73459px 0px, white 2.88051px -0.838247px 0px; */
+  font-family: "Noto Sans SC", cursive;
 }
 .postLink0 {
   border: none;
@@ -232,8 +230,7 @@ h1 {
   color: black;
   text-decoration: none;
   background-color: transparent;
-  font-family: "Sigmar One", cursive;
-  /* text-shadow: white 3px 0px 0px, white 2.83487px 0.981584px 0px, white 2.35766px 1.85511px 0px, white 1.62091px 2.52441px 0px, white 0.705713px 2.91581px 0px, white -0.287171px 2.98622px 0px, white -1.24844px 2.72789px 0px, white -2.07227px 2.16926px 0px, white -2.66798px 1.37182px 0px, white -2.96998px 0.42336px 0px, white -2.94502px -0.571704px 0px, white -2.59586px -1.50383px 0px, white -1.96093px -2.27041px 0px, white -1.11013px -2.78704px 0px, white -0.137119px -2.99686px 0px, white 0.850987px -2.87677px 0px, white 1.74541px -2.43999px 0px, white 2.44769px -1.73459px 0px, white 2.88051px -0.838247px 0px; */
+  font-family: "Noto Sans SC", cursive;
 }
 .postLink:focus {
   outline: none;
@@ -305,10 +302,10 @@ h1 {
 }
 
 .expanded {
-  background-color: #747474;
+  background-color: rgb(155, 155, 155);
   color: #6a6a6a;
   font-family: "Noto Sans SC",sans-serif;
-  width: 3500%;
+  width: 60rem;
   left: 15%;
   padding-left: 40px;
   padding-right: 20px;
@@ -318,7 +315,7 @@ h1 {
   border-radius: 10px;
   border-width: 1px;
   z-index: 3;
-  /* text-shadow: white 3px 0px 0px, white 2.83487px 0.981584px 0px, white 2.35766px 1.85511px 0px, white 1.62091px 2.52441px 0px, white 0.705713px 2.91581px 0px, white -0.287171px 2.98622px 0px, white -1.24844px 2.72789px 0px, white -2.07227px 2.16926px 0px, white -2.66798px 1.37182px 0px, white -2.96998px 0.42336px 0px, white -2.94502px -0.571704px 0px, white -2.59586px -1.50383px 0px, white -1.96093px -2.27041px 0px, white -1.11013px -2.78704px 0px, white -0.137119px -2.99686px 0px, white 0.850987px -2.87677px 0px, white 1.74541px -2.43999px 0px, white 2.44769px -1.73459px 0px, white 2.88051px -0.838247px 0px; */
+  
 }
 #link{
   color: black;
@@ -340,7 +337,7 @@ h1 {
   margin-top: 45px;
 }
 .expanded div img {
-  max-width: 50vh;
+  max-width: 40vh;
   margin-right: 10px;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -363,6 +360,7 @@ h1 {
 .postBody {
   display: block;
   position: relative;
+  width: 25vw;
 }
 .qLinks {
   position: absolute;
@@ -377,28 +375,26 @@ h1 {
   color: silver;
 }
 #title, #desc{
-  font-family: "Sigmar One",cursive;
+  font-family: "Noto Sans SC",cursive;
 }
+
 .newComment {
   padding-bottom: 20px;
 }
 .newComment input {
-
   font-family: 'Noto Sans SC', sans-serif;
   color:black;
   background-color: rgb(200,200,200);
   line-height: 20px;
-  height: 75px;
+  height: 30px;
   width: 95%;
-  font-size: 20px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  font-size: 15px;
   padding: 5px;
   background-color: rgb(200, 200, 200);
-  border-bottom: solid;
+  border: solid;
   border-width: 5px;
-  border-color: black;
+  border-radius: 8px;
+  border-color: rgb(116, 116, 116);
   background-color: transparent;
  
 }
@@ -407,13 +403,10 @@ h1 {
 }
 
 .newComment button {
-  margin-top: 7px;
+  margin-top: 8px;
   color: black;
-  background-color: #747474;
-  border-radius: 7px;
+  background-color: rgb(155, 155, 155);
   padding: 4px;
-  font-family: "Sigmar One", cursive;
-  /* text-shadow: white 3px 0px 0px, white 2.83487px 0.981584px 0px, white 2.35766px 1.85511px 0px, white 1.62091px 2.52441px 0px, white 0.705713px 2.91581px 0px, white -0.287171px 2.98622px 0px, white -1.24844px 2.72789px 0px, white -2.07227px 2.16926px 0px, white -2.66798px 1.37182px 0px, white -2.96998px 0.42336px 0px, white -2.94502px -0.571704px 0px, white -2.59586px -1.50383px 0px, white -1.96093px -2.27041px 0px, white -1.11013px -2.78704px 0px, white -0.137119px -2.99686px 0px, white 0.850987px -2.87677px 0px, white 1.74541px -2.43999px 0px, white 2.44769px -1.73459px 0px, white 2.88051px -0.838247px 0px; */
 }
 .newComment button:hover{
   color: #0097a7;
@@ -422,8 +415,9 @@ h1 {
   background-color: transparent;
   color: rgb(220, 220, 220);
   border: none;
-  margin-top: 6%;
+  margin-top: 5%;
   margin-left: 5%;
+  margin-bottom: 0;
   text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
 }
 .delete:hover {
@@ -438,7 +432,7 @@ h1 {
   display: flex;
 }
 .edit {
-  margin-top: 42px;
+  margin-top: 40px;
   font-size: 13px;
   color: rgb(220, 220, 220);
   text-decoration: none;
@@ -449,6 +443,10 @@ h1 {
 }
 
 /* NEW POST */
+#imgurLink:hover{
+  color: #0097a7;
+
+}
 
 .newPost {
   color: rgb(220, 220, 220);
@@ -472,21 +470,20 @@ h1 {
 .newPost form button {
   border: none;
   font-family: 'Noto Sans SC', sans-serif;
- 
   font-size: 20px;
   text-decoration: none;
-  border-bottom: solid;
   color: black;
   width: 100px;
   text-align: center;
   background-color: rgb(200, 200, 200);
-  border-bottom: solid;
-  border-width: 2px;
-  border-color: black;
   background-color: transparent;
+}
+#submitEditBtn{
+  font-size: 50px;
 }
 .newPost form button:focus {
   outline: none;
+  
 }
 .newPost form button:hover {
   color: white;
@@ -501,13 +498,10 @@ h1 {
   line-height: 20px;
   height: 35px;
   font-size: 20px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-color: rgb(116, 116, 116);
-  border-bottom: solid;
+  border-radius: 10px;
+  border: solid;
   border-width: 3px;
-  border-color: black;
+  border-color: rgb(116, 116, 116);
   background-color: transparent;
 }
 .newPost form textarea {
@@ -519,12 +513,10 @@ h1 {
   height: 250px;
   width: 85%;
   font-size: 20px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: solid;
-  border-width: 5px;
-  border-color: black;
+  border-radius: 10px;
+  border: solid;
+  border-width: 3px;
+  border-color: rgb(116, 116, 116);
   background-color: transparent;
 }
 .newPost form div {
@@ -627,18 +619,20 @@ h1 {
   line-height: 20px;
   height: 35px;
   font-size: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   border-top: none;
   border-left: none;
   border-color: rgb(116, 116, 116);
   border-right: none;
   border-bottom: solid;
   border-width: 3px;
-  border-color: black;
-  background-color: transparent;
+  border-color: rgb(106, 106, 106);
   outline: none;
 }
 .signUpForm input:focus {
   outline: none;
+  background-color: rgb(155,155,155);
 }
 .l1 {
   display: flex;
@@ -659,7 +653,7 @@ h1 {
 /* COMMENT */
 
 .commentCard {
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(220, 220, 220);
   margin-bottom: 5%;
   color: black;
   border-top: none;
@@ -667,21 +661,28 @@ h1 {
   border-right: none;
   border-bottom: solid;
   border-width: 5px;
-  border-color: black;
-  background-color: transparent;
-  
+  border-color: rgb(116, 116, 116); 
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-top: 0;
 }
+
 .commentCard p {
   color: black;
-  border-bottom: none;
-  
+  border: none;
+  padding: 0;
+  margin-left: 10px;
 }
-.commentName {
+.commentName p {
   margin-left: 5%;
-  
+  margin-right: 10px;
+  font-size: 15px;
+ padding-top: 0; 
 }
 
-
+#commentUsr{
+  padding-top: 0;
+}
 
 /* USER */
 
@@ -690,7 +691,9 @@ h1 {
 }
 #us{
   color: black;
-  font-family: "Sigmar One",cursive;
+  font-family: "Noto Sans SC",cursive;
+  font-size: 25px;
+  
 }
 
 .userDiv {
@@ -734,8 +737,12 @@ h7 a{
   text-decoration: none;
 }
 
+#imgurLink:hover{
+  color: black;
+}
 
-@media only screen and (max-width: 1800px) {
+
+/* @media only screen and (max-width: 1800px) {
   .expanded {
     width: 3000%;
   }
@@ -743,12 +750,12 @@ h7 a{
 @media only screen and (max-width: 1650px) {
   .expanded {
     width: 2500%;
-  }
-}
-@media only screen and (max-width: 1400px) {
+  } */
+
+@media only screen and (max-width: 1000px) {
   body{
     position: absolute;
-    background-color:white; 
+    background-color: #cfd8dc; 
   }
   .head {
     display: none;
@@ -761,11 +768,12 @@ h7 a{
     margin-left: 10%;
     position: relative;
     right: 0;
-    width: 88vw;
+    width: 90vw;
     margin-left: 10px;
     padding-left: 0;
     margin-right: 0;
     padding-right: 0;
+    background-color:#90a4ae ;
   }
   .expand {
     position: ABSOLUTE;
@@ -825,8 +833,14 @@ h7 a{
     color: black;
     font-size: 1rem;
     font-family: 'Noto Sans SC', sans-serif;
-    font-weight: 100;
+    font-size: 14px;
     text-decoration: underline;
+    width: 50px;
+  }
+  .postLinks{
+    position: absolute;
+    bottom: 0;
+    
   }
   .postLink{
     padding: 0;
@@ -858,7 +872,7 @@ h7 a{
   .tabs{
     margin: 0;
     padding: 0;
-    font-size: 25px;
+    font-size: 10px;
   }
 
   .tabs a {
@@ -867,15 +881,15 @@ h7 a{
 
   .new{
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 0;
     margin-top: 0;
   }
   .expanded {
-    background-color: #747474;
+    background-color: black;
     color: #6a6a6a;
     font-family: "Noto Sans SC",sans-serif;
-    width: 90vw;
+    width: 50px;
     left: 15%;
     padding: 0;
     margin: 0;
@@ -884,7 +898,50 @@ h7 a{
     border-radius: 10px;
     border-width: 1px;
     z-index: 3;
-    /* text-shadow: white 3px 0px 0px, white 2.83487px 0.981584px 0px, white 2.35766px 1.85511px 0px, white 1.62091px 2.52441px 0px, white 0.705713px 2.91581px 0px, white -0.287171px 2.98622px 0px, white -1.24844px 2.72789px 0px, white -2.07227px 2.16926px 0px, white -2.66798px 1.37182px 0px, white -2.96998px 0.42336px 0px, white -2.94502px -0.571704px 0px, white -2.59586px -1.50383px 0px, white -1.96093px -2.27041px 0px, white -1.11013px -2.78704px 0px, white -0.137119px -2.99686px 0px, white 0.850987px -2.87677px 0px, white 1.74541px -2.43999px 0px, white 2.44769px -1.73459px 0px, white 2.88051px -0.838247px 0px; */
+    
+  }
+
+  .delete {
+    position: absolute; 
+    right: 0;
+    background-color: transparent;
+    color:rgb(220, 220, 220);
+    border: none;
+    margin-top: 6%;
+    margin-left: 5%;
+    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+  }
+  .delete:hover{
+    color: rgb(220, 220, 220);
+  }
+  .delete:focus {
+   color:red
+  }
+  
+  #editBtn{
+    position: absolute;
+    right: 5px;
+    bottom: 3px;
+  }
+  #editBtn:hover{
+    color: rgb(220,220,220);
+  }
+
+  .newPost{
+    position: absolute;
+    left: 0;
+    width: 300px;
+    left: 50px;
+    margin:0 ;
+    padding-bottom: 0;
+    background-color: transparent;
+    border: solid;
+    border-width: 5px;
+    border-color: rgb(106, 106, 106);
+
+  }
+  #editPostIcon{
+    margin-left: 10px;
   }
  
 

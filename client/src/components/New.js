@@ -81,7 +81,7 @@ class New extends Component {
                         </div>
                         <div>
                             <input
-                                placeholder="must be a direct image link"
+                                placeholder="Must be a direct image link"
                                 type="text" 
                                 name="image_link"
                                 value={image_link}
@@ -89,7 +89,7 @@ class New extends Component {
                             />
                         </div>
                         <h7>We recommend using, 
-                                <a href='https://imgur.com' target='_blank' rel="noopener noreferrer">
+                                <a id="imgurLink" href='https://imgur.com' target='_blank' rel="noopener noreferrer">
                                     imgur
                                 </a> 
                             to host your image!</h7> 
