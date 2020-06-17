@@ -29,9 +29,9 @@ class Card extends Component {
            commentSubmited: 'hidden',
            commentName: 'hidden',
            saved: this.props.card._id,
-           report: 'report',
-           follow: 'follow',
-           save: 'save'
+           report: 'Report',
+           follow: 'Follow',
+           save: 'Save'
         }
     }
 
@@ -92,7 +92,7 @@ class Card extends Component {
 
     follow = e => {
         this.setState({
-            follow: 'followed'
+            follow: 'Followed'
         })
         e.preventDefault()
         axios.put('/api/follow/' + this.state.username, this.state)
@@ -102,7 +102,7 @@ class Card extends Component {
     }
     save = e => {
         this.setState({
-            save: 'saved'
+            save: 'Saved'
         })
         e.preventDefault()
         axios.put('/api/save/' + this.state.username, this.state)
@@ -113,7 +113,7 @@ class Card extends Component {
 
     report = e => {
         this.setState({
-            report: 'reported'
+            report: 'Reported'
         })
         e.preventDefault()
         axios.post('/api/report/', this.state)
