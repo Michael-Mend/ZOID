@@ -4,6 +4,9 @@ import SearchBar from "./SearchBar";
 import "../App.css";
 import axios from 'axios';
 import firebase from 'firebase';
+import arw from '../images/arw.png';
+import app from '../base';
+import Tags from "./Tags";
 
 class New extends Component {
     constructor(props) {
@@ -53,9 +56,14 @@ class New extends Component {
     }
 
     render() {
-        const { title, description, image_link, file_link, tag } = this.state
+        const { title, description, image_link, file_link, tag, username } = this.state
         return(
             <div>
+                <div className='userDiv'>
+                    <button className='signout' onClick={() => app.auth().signOut()}><img title='sign out' className='so' src={arw} alt=''/></button>
+                    <p>{username}</p>
+                </div>
+                <Tags />
                 <SearchBar />
                 <Nav />
                 <div className="newPost">

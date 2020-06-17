@@ -8,6 +8,7 @@ import Thumb from '../images/ph.png';
 import app from '../base';
 import firebase from 'firebase';
 import Tags from "./Tags";
+import arw from '../images/arw.png'
 
 class Home extends Component {
     constructor(props) {
@@ -44,8 +45,8 @@ class Home extends Component {
         return (
             <div>
                 <div className='userDiv'>
+                <button className='signout' onClick={() => app.auth().signOut()}><img title='sign out' className='so' src={arw} alt=''/></button>
                     <p>{user}</p>
-                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
                 </div>
                 <Tags />
                 <SearchBar />

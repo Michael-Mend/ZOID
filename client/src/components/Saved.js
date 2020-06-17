@@ -8,6 +8,7 @@ import axios from 'axios';
 import Thumb from '../images/ph.png';
 import firebase from 'firebase';
 import app from '../base';
+import arw from '../images/arw.png'
 
 class Saved extends Component {
     constructor(props) {
@@ -54,8 +55,8 @@ class Saved extends Component {
         return (
             <div>
                 <div className='userDiv'>
+                    <button className='signout' onClick={() => app.auth().signOut()}><img title='sign out' className='so' src={arw} alt=''/></button>
                     <p>{user}</p>
-                    <button className='signout' onClick={() => app.auth().signOut()}>sign out</button>
                 </div>
                 <Tags />
                 <SearchBar />

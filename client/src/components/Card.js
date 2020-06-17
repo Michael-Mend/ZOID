@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import '../App.css';
-import expand from '../images/new2.png';
 import axios from 'axios';
 import firebase from 'firebase';
 import Comment from './Comment';
@@ -9,6 +8,7 @@ import x from '../images/x.png';
 import pic from '../images/pic.png';
 import fpic from '../images/fpic.png';
 import edit from '../images/edit.png';
+import expand from '../images/new2.png'
 import delete1 from '../images/delete.png';
 
 
@@ -130,7 +130,7 @@ class Card extends Component {
         return (
             <div className='cardMain'>
                 <div className='expand'>
-                    <button className='f' onClick={this.expand}><img src={expand} alt=''/></button>
+                    <button className='f' ><img className='visnone' src={expand} alt=''/></button>
                     <div className={this.state.class}>
                         <div>
                             <button className='x1' onClick={this.close}><img className='x' src={x} alt=''/></button>
@@ -168,7 +168,7 @@ class Card extends Component {
                     </div>
                 </div>
                 <div className='card'>
-                    <img className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
+                    <img onClick={this.expand} className='thumb' alt={this.props.card.title} src={this.props.card.image_link}/>
                     <div> 
                         <div className='titleDiv'>
                             <Link to={'/profile/' + this.props.card.username} className='usrnm'> {this.props.card.username} </Link>
