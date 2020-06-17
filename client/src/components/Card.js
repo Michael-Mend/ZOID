@@ -5,6 +5,12 @@ import axios from 'axios';
 import firebase from 'firebase';
 import Comment from './Comment';
 import { Link } from "react-router-dom";
+import x from '../images/x.png';
+import pic from '../images/pic.png';
+import fpic from '../images/fpic.png';
+import edit from '../images/edit.png';
+import delete1 from '../images/delete.png';
+
 
 class Card extends Component {
     constructor(props) {
@@ -124,19 +130,19 @@ class Card extends Component {
         return (
             <div className='cardMain'>
                 <div className='expand'>
-                    <button onClick={this.expand}><img  src={expand} alt=''/></button>
+                    <button className='f' onClick={this.expand}><img src={expand} alt=''/></button>
                     <div className={this.state.class}>
                         <div>
-                            <button onClick={this.close}>close</button>
-                            <h3 className='title0'>{this.props.card.title}</h3>
+                            <button className='x1' onClick={this.close}><img className='x' src={x} alt=''/></button>
+                            <h3 className='title'>{this.props.card.title}</h3>
                         </div>
                         <div>
                             <img alt={this.props.card.title} src={this.props.card.image_link}/>
                             <div className='postBody'>
                                 <p>{this.props.card.description}</p>
                                 <div className='qLinks'>
-                                    <a href={this.props.card.image_link} target='_blank' rel="noopener noreferrer">image link</a>
-                                    <a href={this.props.card.file_link} target='_blank' rel="noopener noreferrer">file link</a>
+                                    <a href={this.props.card.image_link} target='_blank' rel="noopener noreferrer"><img title='direct image link' className='pic' src={pic} alt=''/></a>
+                                    <a href={this.props.card.file_link} target='_blank' rel="noopener noreferrer"><img title='file link' className='fpic' src={fpic} alt=''/></a>
                                 </div>
                             </div>
                         </div>
@@ -167,8 +173,8 @@ class Card extends Component {
                         <div className='titleDiv'>
                             <Link to={'/profile/' + this.props.card.username} className='usrnm'> {this.props.card.username} </Link>
                             <h3 className='title'>{this.props.card.title}</h3>
-                            <Link className={this.props.edit} to={"edit/" + this.state.postID} >edit</Link>
-                            <button className={this.props.dlt} onClick={this.delete}>delete</button>
+                            <Link className={this.props.edit} to={"edit/" + this.state.postID} ><img src={edit} alt='' className='editImg' title='edit post'/></Link>
+                            <button className={this.props.dlt} onClick={this.delete}><img src={delete1} alt='' className='deleteImg' title='delete post'/></button>
                         </div>
                         <div className='postLinks'> 
                     <button onClick={this.follow} className='postLink'>{this.state.follow}</button>

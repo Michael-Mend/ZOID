@@ -31,17 +31,22 @@ const Login = ({ history }) => {
 
     return (
         <div>
-            <form onSubmit={handleLogin} className="signUpForm">
-                <p className="usernameLabel">email</p>
-                <input name='email' id='username' type="email"></input>
-                <p>password</p>
-                <input name='password' id='password' className="passwordInput" type="password"></input>
-                <button type='submit' className='login'>login</button>
-                <div className='l1'>
-                    <h4>dont have an account?</h4>
-                    <Link to='/signup'>signup</Link>
-                </div>
-            </form>
+            <div className='zoidDiv'>
+                <p>ZOID is a user directed forum, aimed to allow creators a space to recieve feed back on their ideas</p>
+            </div>
+            <div>
+                <form onSubmit={handleLogin} className="signUpForm">
+                    <p className="usernameLabel">email</p>
+                    <input name='email' id='username' type="email"></input>
+                    <p>password</p>
+                    <input name='password' id='password' className="passwordInput" type="password"></input>
+                    <button type='submit' className='login'>login</button>
+                    <div className='l1'>
+                        <h4>dont have an account?</h4>
+                        <Link to='/signup'>signup</Link>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }
