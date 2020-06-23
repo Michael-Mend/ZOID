@@ -1,5 +1,4 @@
 # ZOID
-![UI]()
 
 ## Purpose 
 
@@ -23,13 +22,13 @@ As a user, in addition to making posts, I want to be able to:
 ## User Experience
 
 When A user first arrives at the site they will either be met with the login or signup screen.
-![login]()
+![login](https://i.imgur.com/akHZJVC.png)
 
 Once logged in a user is the met with the front page containing a variety of all the posts on the site.
-![front page]()
+![front page](https://i.imgur.com/YM86Wj1.png)
 
 A user then is able to expand posts by clicking on the card image.
-![expanded post]()
+![expanded post](https://i.imgur.com/04YeEFD.png)
 
 The user is introduced to additional information about the posts including:
 
@@ -38,13 +37,13 @@ The user is introduced to additional information about the posts including:
     - relevant links
 
 The user also has the ability to comment.
-![comment]()
+![comment](https://i.imgur.com/jfBa3LX.png)
 
 From the post card a user is also able to follow the poster, save the post or report it.
-![follow save report]()
+![follow save report](https://i.imgur.com/dthnLKH.png)
 
 The user can also create a new post by clicking the plus in the top right corner and filling out the relevant information.
-![new post]()
+![new post](https://i.imgur.com/PZX0K65.png)
 
 ## Function
 
